@@ -39,6 +39,8 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+//        System.out.println(Screen.getPrimary().getVisualBounds().getHeight());
+//        System.out.println(Screen.getPrimary().getVisualBounds().getWidth());
     }
 
 }
