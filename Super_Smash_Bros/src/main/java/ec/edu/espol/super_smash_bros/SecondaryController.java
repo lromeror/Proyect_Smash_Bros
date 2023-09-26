@@ -8,9 +8,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Screen;
 import javafx.util.Duration;
 
@@ -55,25 +57,39 @@ public class SecondaryController implements Initializable{
 
         // Inicia la animación
         translateTransition.play();
-        String videoPath = "src/main/resources/Video_prueba/01_ Mario – Super Smash Bros. Ultimate.mp4"; // Reemplaza con la ruta a tu archivo de video
+        
+        String videoPath = "src/main/resources/Video_prueba/01_ Mario – Super Smash Bros. Ultimate.mp4";
         File videoFile = new File(videoPath);
         String videoUrl = videoFile.toURI().toString();
         
         // Crear Media, MediaPlayer y MediaView
-        
         Media media = new Media(videoUrl);
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         MediaView mediaView = new MediaView(mediaPlayer);
-                
-        // Posicionar el MediaView en la esquina superior izquierda
-        AnchorPane.setTopAnchor(mediaView, 0.0);
-        AnchorPane.setLeftAnchor(mediaView, 0.0);
-        double paneWidth = anchorPane.getWidth();
-        double paneHeight = anchorPane.getHeight();
-        mediaView.setFitWidth(paneWidth * 0.3); // Ejemplo: 30% del ancho del AnchorPane
-        mediaView.setFitHeight(paneHeight * 0.5); // Ejemplo: 50% del alto del AnchorPane
+        
+        // Ajustar el tamaño del MediaView a 600px x 600px
+        mediaView.setFitWidth(600);
+        mediaView.setFitHeight(600);
 
-        // Añadir MediaView al AnchorPane
+        // Crear un clip circular para el MediaView
+        Rectangle clip = new Rectangle(mediaView.getFitWidth(), mediaView.getFitHeight());
+        clip.setArcWidth(90); // Ajusta según el radio de borde deseado
+        clip.setArcHeight(90); // Ajusta según el radio de borde deseado
+        mediaView.setClip(clip);
+
+        // Añadir listeners para ajustar el clip si el tamaño del MediaView cambia
+        mediaView.fitWidthProperty().addListener((observable, oldValue, newValue) -> {
+            clip.setWidth(newValue.doubleValue());
+        });
+        mediaView.fitHeightProperty().addListener((observable, oldValue, newValue) -> {
+            clip.setHeight(newValue.doubleValue());
+        });
+
+        // Posicionar el MediaView en la esquina superior izquierda con márgenes
+        AnchorPane.setTopAnchor(mediaView, 30.0); // Margen superior de 40px
+        AnchorPane.setLeftAnchor(mediaView, 20.0); // Margen izquierdo de 20px
+
+        // Añadir el MediaView al AnchorPane
         anchorPane.getChildren().add(mediaView);
 
         // Iniciar la reproducción del video
