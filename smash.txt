@@ -28,3 +28,22 @@ INDICE,NOMBRE,MOVIMIENTOS,FINALSMASH,IMAGEN,DESCRIPCION
 16;Sheik;Tormenta de cuchillas:NORMAL:/data/sheik/normal.jpg,Granada fulminante:LAT:/data/sheik/lat.jpg,Desaparición:UP:/data/sheik/up.jpg, Salto delfín:DOWN:/data/sheik/down.jpg;Danza sheika: /data/sheik/final.jpg;samus.jpg; La hábil y misteriosa guerrera ninja emplea velocidad y agilidad sobrenaturales en combate manteniendo su verdadera identidad en secreto.
 ;Shulk;
 
+
+
+
+
+
+
+
+
+1;Entrenador Pokémon;Cambio de Pokémon:DOWN:/data/entrenadorpokémon/down.jpg;Remate Triple: /data/entrenadorpokémon/final.jpg;entrenadorpokémon.jpg; Entrenador Pokémon cambia entre Squirtle, Ivysaur y Charizard en combate.
+2;Estela y Destello;Tiro Destello:NORMAL:/data/esteladestello/normal.jpg,Trozos de estrella:LAT:/data/esteladestello/lat.jpg, Salto Estelar:UP:/data/esteladestello/up.jpg, Antigravedad:DOWN:/data/esteladestello/down.jpg;Hiperestrella: /data/esteladestello/final.jpg;esteladestello.jpg; Estela y Destello, dos espíritus celestiales, brindan apoyo y defensa a los luchadores en Super Smash Bros. Ultimate.
+3;Falco;Blaster:NORMAL:/data/falco/normal.jpg,Fantasma Falco:LAT:/data/falco/lat.jpg,Pájaro de fuego:UP:/data/falco/up.jpg, Reflector:DOWN:/data/falco/down.jpg;Equipo Star Fox:/data/falco/final.jpg;falco.jpg; Falco, un piloto habilidoso, usa velocidad y ataques láser en Super Smash Bros. Ultimate para dominar el aire.
+4;Fox;Blaster:NORMAL:/data/fox/normal.jpg, Ilusión Fox:LAT:/data/fox/lat.jpg, Fox de Fuego:UP:/data/fox/up.jpg, Reflector:DOWN:/data/fox/down.jpg; Equipo Star Fox:/data/fox/final.jpg;fox.jpg;Fox es un luchador ágil y rápido con ataques precisos y un potente movimiento especial, Reflector.
+5;Ganondorf;Puñetazo del hechicero:NORMAL:/data/ganon/normal.jpg, Estrangulamiento:LAT:/data/ganon/lat.jpg, Salto Oscuro:UP:/data/ganon/up.jpg, Patada del hechicero:DOWN:/data/ganon/down.jpg; Ganon, el rey demonio:/data/ganon/final.jpg;ganon.jpg;Ganondorf es un villano poderoso de la serie Zelda, conocido por su fuerza y ataques devastadores.
+6;Greninja; Shuriken de agua:NORMAL:/data/grenin/normal.jpg, Sombra vil:LAT:/data/grenin/lat.jpg, Hidrobomba:UP:/data/grenin/up.jpg, Sustituto:DOWN:/data/grenin/down.jpg;Técnica Floral Ninja:/data/grenin/final.jpg;grenin.jpg;Greninja, el rápido y astuto Pokémon de tipo Agua/Siniestro, deslumbra con movimientos ninja y ataques precisos.
+7;Ice Climbers;Golpe Iceberg:NORMAL:/data/ice/normal.jpg, Ráfaga Martillo: LAT:/data/ice/lat.jpg,Salto con Cuerda:UP:/data/ice/up.jpg,Ventisca:DOWN: /data/ice/down.jpg;Iceberg: /data/ice/final.jpg; ice.jpg; Ice Climbers son dúo esquiador y montañero, trabajan juntos para ataques sincronizados y controlar el escenario.
+8;Ike;Erupción:NORMAL:/data/ike/normal.jpg, Espadazo: LAT:/data/ike/lat.jpg, Éter:UP:/data/ike/up.jpg, Contrataque:DOWN: /data/ike/down.jpg; Gran Éter: /data/ike/final.jpg; ike.jpg;Ike es un poderoso espadachín con ataques lentos pero devastadores en Super Smash Bros. Ultimate.
+9;Incineroar;Lariat Oscuro:NORMAL:/data/inc/normal.jpg, Contra las Cuerdas: LAT:/data/inc/lat.jpg, Tajo Cruzado:UP:/data/inc/up.jpg, Desquite:DOWN: /data/inc/down.jpg; Hiperplancha Oscura X: /data/inc/final.jpg; inc.png;Incineroar, un feroz Pokémon de tipo Fuego/Lucha, usa movimientos poderosos y teatrales para derrotar a sus oponentes.
+10;Inkling;Lanzatintas:NORMAL:/data/inkl/normal.jpg, Rodillo básico: LAT:/data/inkl/lat.jpg, Supersalto:UP:/data/inkl/up.jpg, Bomba Básica:DOWN: /data/inkl/down.jpg; Tintófono: /data/inkl/final.jpg; inkl.jpg; Los Inklings de Splatoon son rápidos, usan tinta y transforman en calamar para moverse ágilmente.
+11;Isabelle;Bolsillo:NORMAL:/data/isa/normal.jpg, Caña de pescar: LAT:/data/isa/lat.jpg, Columpio de globos:UP:/data/isa/up.jpg, Trampa Giroide:DOWN: /data/isa/down.jpg; lo que esta alado: /data/La alcaldía de mis sueños/final.jpg; Isabelle.jpg; Isabelle es una luchadora alegre de Animal Crossing con movimientos centrados en herramientas y trampas ingeniosas.
