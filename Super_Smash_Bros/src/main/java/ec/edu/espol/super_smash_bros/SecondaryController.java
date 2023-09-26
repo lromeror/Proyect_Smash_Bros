@@ -4,11 +4,17 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+
 import javafx.scene.layout.Pane;
+
+import javafx.scene.layout.VBox;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -25,6 +31,10 @@ public class SecondaryController implements Initializable{
     private ImageView tortuga;
     @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private VBox cuadroImagen;
+    @FXML
+    private ImageView imagenLuchador;
     
     public void setPersonaje(Personaje p){
         this.personaje = p;
@@ -68,8 +78,8 @@ public class SecondaryController implements Initializable{
         MediaView mediaView = new MediaView(mediaPlayer);
         
         // Ajustar el tamaño del MediaView a 600px x 600px
-        mediaView.setFitWidth(600);
-        mediaView.setFitHeight(600);
+        mediaView.setFitWidth(480);
+        mediaView.setFitHeight(480);
 
         // Crear un clip circular para el MediaView
         Rectangle clip = new Rectangle(mediaView.getFitWidth(), mediaView.getFitHeight());
@@ -94,21 +104,57 @@ public class SecondaryController implements Initializable{
 
         // Iniciar la reproducción del video
         mediaPlayer.play();
+        imagenLuchador.setFitHeight(600);
+        PersonajeHablando hilo1 = new PersonajeHabalando();
+        Image im = new Image("images_png_1/mario.png");
+        imagenLuchador.setImage(im);
+        
     }
     
     private void adjustSizesAndPositions() {
         double paneWidth = anchorPane.getWidth();
         double paneHeight = anchorPane.getHeight();
 
-        tortuga.setFitWidth(paneWidth * 0.5);
-        tortuga.setFitHeight(paneHeight * 0.5);
+        tortuga.setFitWidth(paneWidth * 0.55);
+        tortuga.setFitHeight(paneHeight * 0.55);
         AnchorPane.setBottomAnchor(tortuga, 0.0);
-        AnchorPane.setLeftAnchor(tortuga, 0.0);
+        AnchorPane.setLeftAnchor(tortuga, 25.0);
 
         viñeta.setFitWidth(paneWidth * 0.7);
         viñeta.setFitHeight(paneHeight);
         viñeta.getStyleClass().add("margin_botton");
         AnchorPane.setBottomAnchor(viñeta, 0.0);
-        AnchorPane.setLeftAnchor(viñeta, paneWidth * 0.3);
+        AnchorPane.setLeftAnchor(viñeta, paneWidth * 0.32);
+        cuadroImagen.setMaxHeight(600);
+        AnchorPane.setTopAnchor(cuadroImagen, paneHeight * 0.1);
+        AnchorPane.setRightAnchor(cuadroImagen, paneWidth * 0.1);
+        
+    }
+
+    public class PersonajeHablando extends Thread{
+        private Personaje personaje;
+        private String carpetaInicio = "images_png_1/";
+        private String carpetaFin = "images_png_2/";
+
+        public PersonajeHablando(Personaje p){
+            personaje= p;
+        }
+        @Override
+        public void run(){
+            try{
+                Platform.runLater(()->{
+                imagenLuchador.setImage(new Image(carpetaInicio+personaje.getName()+".png"));
+                // Depende de como este el nomnre de la imagen, si con extension o no
+                });
+                Thread.sleep(25000);
+                Platform.runLater(()->{
+                    imagenLuchador.setImage(new Image(carpetaFin+personaje.getName()+".png"));
+                    // Depende de como este el nomnre de la imagen, si con extension o no
+                });
+            }
+            catch(InterruptedException e){
+                
+            }
+        }
     }
 }
