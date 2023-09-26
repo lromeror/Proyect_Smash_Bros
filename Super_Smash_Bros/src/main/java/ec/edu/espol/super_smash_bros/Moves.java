@@ -6,8 +6,8 @@ package ec.edu.espol.super_smash_bros;
 
 /**
  *
- * @author angelozurita
+ * @author Swat
  */
-class Moves {
+public class Moves {
     
 }

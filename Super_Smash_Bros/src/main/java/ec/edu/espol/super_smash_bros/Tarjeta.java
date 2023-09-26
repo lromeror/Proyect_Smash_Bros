@@ -8,7 +8,7 @@ import javafx.scene.layout.StackPane;
 
 /**
  *
- * @author josel
+ * @author Swat
  */
 public class Tarjeta extends StackPane{
     private Personaje personaje;
