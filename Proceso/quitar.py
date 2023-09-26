@@ -3,7 +3,7 @@ from PIL import Image
 import os 
 
 # Especifica la ruta de la carpeta
-carpeta = "/Users/angelozurita/Repositorios_GitHub/Proyect_Smash_Bros/Proceso/Images"
+carpeta = "/Users/angelozurita/Repositorios_GitHub/Proyect_Smash_Bros/Proceso/images_png_1"
 
 # Lista todos los archivos en la carpeta
 imagenes = os.listdir(carpeta)
