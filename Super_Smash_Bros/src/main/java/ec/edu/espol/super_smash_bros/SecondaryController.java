@@ -1,20 +1,38 @@
 package ec.edu.espol.super_smash_bros;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+
 import javafx.scene.layout.Pane;
+
+import javafx.scene.layout.VBox;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 
 public class SecondaryController implements Initializable{
     
@@ -25,6 +43,12 @@ public class SecondaryController implements Initializable{
     private ImageView tortuga;
     @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private ImageView imagenLuchador;
+    @FXML
+    private Text nombre;
+    @FXML
+    private Button regresar;
     
     public void setPersonaje(Personaje p){
         this.personaje = p;
@@ -33,8 +57,20 @@ public class SecondaryController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
+        personaje = new Personaje("King K Rool","king_k_rool.png");
+        nombre.setText(personaje.getName());
+//        nombre.setTextFill(Color.BLACK);
+        try{
+            nombre.setFont(customFont);
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        nombre.setTextAlignment(TextAlignment.CENTER);
+        nombre.setWrappingWidth(430);
         
-
+//        
         // Establece el tamaño del AnchorPane para que coincida con el tamaño de la pantalla
         anchorPane.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth());
         anchorPane.setPrefHeight(Screen.getPrimary().getVisualBounds().getHeight());
@@ -68,8 +104,8 @@ public class SecondaryController implements Initializable{
         MediaView mediaView = new MediaView(mediaPlayer);
         
         // Ajustar el tamaño del MediaView a 600px x 600px
-        mediaView.setFitWidth(600);
-        mediaView.setFitHeight(600);
+        mediaView.setFitWidth(480);
+        mediaView.setFitHeight(480);
 
         // Crear un clip circular para el MediaView
         Rectangle clip = new Rectangle(mediaView.getFitWidth(), mediaView.getFitHeight());
@@ -94,21 +130,79 @@ public class SecondaryController implements Initializable{
 
         // Iniciar la reproducción del video
         mediaPlayer.play();
+//        imagenLuchador.setFitHeight(900);
+        PersonajeHablando hilo1 = new PersonajeHablando(personaje);
+        hilo1.start();
+        
+        
     }
     
     private void adjustSizesAndPositions() {
         double paneWidth = anchorPane.getWidth();
         double paneHeight = anchorPane.getHeight();
 
-        tortuga.setFitWidth(paneWidth * 0.5);
-        tortuga.setFitHeight(paneHeight * 0.5);
+        tortuga.setFitWidth(paneWidth * 0.55);
+        tortuga.setFitHeight(paneHeight * 0.55);
         AnchorPane.setBottomAnchor(tortuga, 0.0);
-        AnchorPane.setLeftAnchor(tortuga, 0.0);
+        AnchorPane.setLeftAnchor(tortuga, 25.0);
 
         viñeta.setFitWidth(paneWidth * 0.7);
         viñeta.setFitHeight(paneHeight);
         viñeta.getStyleClass().add("margin_botton");
         AnchorPane.setBottomAnchor(viñeta, 0.0);
-        AnchorPane.setLeftAnchor(viñeta, paneWidth * 0.3);
+        AnchorPane.setLeftAnchor(viñeta, paneWidth * 0.32);
+        imagenLuchador.setFitWidth(400);
+        imagenLuchador.setFitHeight(400);
+        
+        AnchorPane.setTopAnchor(imagenLuchador, 0.0);
+        AnchorPane.setRightAnchor(imagenLuchador, 0.0);
+        
+        AnchorPane.setBottomAnchor(regresar, paneHeight * 0.01);
+        AnchorPane.setRightAnchor(regresar, paneWidth * 0.01);
+        
+        AnchorPane.setTopAnchor(nombre, 80.0);
+        AnchorPane.setRightAnchor(nombre, 400.0);
+        
+    }
+
+    @FXML
+    private void switchToPrimary(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
+        Parent root = loader.load();
+//        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
+        stage.setScene(scene);
+    }
+
+    public class PersonajeHablando extends Thread{
+        private Personaje per;
+        private String carpetaInicio = "images_png_1/";
+        private String carpetaFin = "images_png_2/";
+
+        public PersonajeHablando(Personaje p){
+            per= p;
+        }
+        @Override
+        public void run(){
+            for (int i=0; i<31; i++){
+                try{
+                Platform.runLater(()->{
+                imagenLuchador.setImage(new Image(carpetaInicio+per.getNomArch()));
+                // Depende de como este el nomnre de la imagen, si con extension o no
+                });
+                Thread.sleep(1000);
+                Platform.runLater(()->{
+                    imagenLuchador.setImage(new Image(carpetaFin+per.getNomArch()));
+                    // Depende de como este el nomnre de la imagen, si con extension o no
+                });
+                Thread.sleep(1000);
+            }
+            catch(InterruptedException e){
+                
+            }
+            }
+        }
     }
 }

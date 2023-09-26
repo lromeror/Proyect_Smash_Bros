@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.super_smash_bros.SecondaryController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="922.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.super_smash_bros.SecondaryController">
    <children>
-      <ImageView fx:id="viñeta" fitHeight="522.0" fitWidth="582.0" layoutX="283.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.0">
+      <ImageView fx:id="viñeta" fitHeight="522.0" fitWidth="582.0" layoutX="283.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../taws/viñeta-grande.png" />
          </image>
@@ -17,11 +20,23 @@
             <Image url="@../../../../taws/tortuga.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="imagenLuchador" fitHeight="215.0" fitWidth="230.0" layoutX="579.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="nombre" layoutX="397.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="325.0">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Text>
+      <Button fx:id="regresar" contentDisplay="CENTER" layoutX="848.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#switchToPrimary" prefHeight="36.0" prefWidth="60.0" style="-fx-background-color: #0064b3;" textFill="#0d0d0d">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../taws/regresar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
    <opaqueInsets>
-      <Insets bottom="20.0" />
+      <Insets />
    </opaqueInsets>
-   <padding>
-      <Insets bottom="20.0" />
-   </padding>
 </AnchorPane>
