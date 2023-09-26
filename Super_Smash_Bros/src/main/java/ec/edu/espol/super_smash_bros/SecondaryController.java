@@ -1,14 +1,21 @@
 package ec.edu.espol.super_smash_bros;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.layout.Pane;
@@ -19,8 +26,13 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 
 public class SecondaryController implements Initializable{
     
@@ -32,9 +44,11 @@ public class SecondaryController implements Initializable{
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private VBox cuadroImagen;
-    @FXML
     private ImageView imagenLuchador;
+    @FXML
+    private Text nombre;
+    @FXML
+    private Button regresar;
     
     public void setPersonaje(Personaje p){
         this.personaje = p;
@@ -43,8 +57,20 @@ public class SecondaryController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
+        personaje = new Personaje("King K Rool","king_k_rool.png");
+        nombre.setText(personaje.getName());
+//        nombre.setTextFill(Color.BLACK);
+        try{
+            nombre.setFont(customFont);
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        nombre.setTextAlignment(TextAlignment.CENTER);
+        nombre.setWrappingWidth(430);
         
-
+//        
         // Establece el tamaño del AnchorPane para que coincida con el tamaño de la pantalla
         anchorPane.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth());
         anchorPane.setPrefHeight(Screen.getPrimary().getVisualBounds().getHeight());
@@ -104,10 +130,10 @@ public class SecondaryController implements Initializable{
 
         // Iniciar la reproducción del video
         mediaPlayer.play();
-        imagenLuchador.setFitHeight(600);
-        PersonajeHablando hilo1 = new PersonajeHabalando();
-        Image im = new Image("images_png_1/mario.png");
-        imagenLuchador.setImage(im);
+//        imagenLuchador.setFitHeight(900);
+        PersonajeHablando hilo1 = new PersonajeHablando(personaje);
+        hilo1.start();
+        
         
     }
     
@@ -125,35 +151,57 @@ public class SecondaryController implements Initializable{
         viñeta.getStyleClass().add("margin_botton");
         AnchorPane.setBottomAnchor(viñeta, 0.0);
         AnchorPane.setLeftAnchor(viñeta, paneWidth * 0.32);
-        cuadroImagen.setMaxHeight(600);
-        AnchorPane.setTopAnchor(cuadroImagen, paneHeight * 0.1);
-        AnchorPane.setRightAnchor(cuadroImagen, paneWidth * 0.1);
+        imagenLuchador.setFitWidth(400);
+        imagenLuchador.setFitHeight(400);
+        
+        AnchorPane.setTopAnchor(imagenLuchador, 0.0);
+        AnchorPane.setRightAnchor(imagenLuchador, 0.0);
+        
+        AnchorPane.setBottomAnchor(regresar, paneHeight * 0.01);
+        AnchorPane.setRightAnchor(regresar, paneWidth * 0.01);
+        
+        AnchorPane.setTopAnchor(nombre, 80.0);
+        AnchorPane.setRightAnchor(nombre, 400.0);
         
     }
 
+    @FXML
+    private void switchToPrimary(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
+        Parent root = loader.load();
+//        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
+        stage.setScene(scene);
+    }
+
     public class PersonajeHablando extends Thread{
-        private Personaje personaje;
+        private Personaje per;
         private String carpetaInicio = "images_png_1/";
         private String carpetaFin = "images_png_2/";
 
         public PersonajeHablando(Personaje p){
-            personaje= p;
+            per= p;
         }
         @Override
         public void run(){
-            try{
+            for (int i=0; i<31; i++){
+                try{
                 Platform.runLater(()->{
-                imagenLuchador.setImage(new Image(carpetaInicio+personaje.getName()+".png"));
+                imagenLuchador.setImage(new Image(carpetaInicio+per.getNomArch()));
                 // Depende de como este el nomnre de la imagen, si con extension o no
                 });
-                Thread.sleep(25000);
+                Thread.sleep(1000);
                 Platform.runLater(()->{
-                    imagenLuchador.setImage(new Image(carpetaFin+personaje.getName()+".png"));
+                    imagenLuchador.setImage(new Image(carpetaFin+per.getNomArch()));
                     // Depende de como este el nomnre de la imagen, si con extension o no
                 });
+                Thread.sleep(1000);
             }
             catch(InterruptedException e){
                 
+            }
             }
         }
     }
