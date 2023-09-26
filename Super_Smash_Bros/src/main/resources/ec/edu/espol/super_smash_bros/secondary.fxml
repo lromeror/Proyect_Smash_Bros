@@ -4,14 +4,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.super_smash_bros.SecondaryController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.super_smash_bros.SecondaryController">
    <children>
-      <ImageView fx:id="viñeta" fitHeight="709.0" fitWidth="764.0" layoutX="565.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="viñeta" fitHeight="716.0" fitWidth="840.0" layoutX="489.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../taws/viñeta-grande.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="tortuga" fitHeight="460.0" fitWidth="574.0" layoutX="75.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tortuga" fitHeight="460.0" fitWidth="574.0" layoutX="44.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../taws/tortuga.png" />
          </image></ImageView>
