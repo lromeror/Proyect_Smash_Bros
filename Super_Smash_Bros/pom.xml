@@ -25,6 +25,11 @@
             <artifactId>jfreechart</artifactId>
             <version>1.5.3</version>
         </dependency>
+        <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-media</artifactId>
+        <version>13</version> <!-- Reemplaza con la versión de JavaFX que estás utilizando -->
+        </dependency>
     </dependencies>
     <build>
         <plugins>

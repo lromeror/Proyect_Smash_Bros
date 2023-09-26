@@ -6,13 +6,17 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ScrollPane;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class PrimaryController implements Initializable{
 
@@ -22,7 +26,14 @@ public class PrimaryController implements Initializable{
     private ArrayList<Personaje> personajes;
 
     private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("secondary.fxml"));
+        Parent root = loader.load();
+//        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
+        Scene scene = new Scene(root);
+        SecondaryController controlador = loader.getController(); 
+        Stage stage = (Stage) content.getScene().getWindow();
+        scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
+        stage.setScene(scene);
         
     }
 
