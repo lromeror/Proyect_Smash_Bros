@@ -11,7 +11,7 @@
             <Image url="@../../../../taws/viñeta-grande.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="tortuga" fitHeight="460.0" fitWidth="574.0" layoutX="44.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tortuga" fitHeight="284.0" fitWidth="359.0" layoutX="44.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../taws/tortuga.png" />
          </image></ImageView>

@@ -27,16 +27,12 @@ public class SecondaryController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
-        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        
 
         // Establece el tamaño del AnchorPane para que coincida con el tamaño de la pantalla
-        anchorPane.setPrefWidth(screenWidth);
-        anchorPane.setPrefHeight(screenHeight);
-        viñeta.fitWidthProperty().bind(anchorPane.widthProperty());
-        viñeta.fitHeightProperty().bind(anchorPane.heightProperty());
-        tortuga.fitWidthProperty().bind(anchorPane.widthProperty());
-        tortuga.fitHeightProperty().bind(anchorPane.heightProperty());
+        anchorPane.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth());
+        anchorPane.setPrefHeight(Screen.getPrimary().getVisualBounds().getHeight());
+        
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(3), tortuga); // Duración de la animación en segundos
         translateTransition.setFromX(-tortuga.getFitWidth()); // Posición inicial (fuera del área visible a la izquierda)
         translateTransition.setToX(tortuga.getParent().getLayoutBounds().getWidth()); // Posición final (fuera del área visible a la derecha)
