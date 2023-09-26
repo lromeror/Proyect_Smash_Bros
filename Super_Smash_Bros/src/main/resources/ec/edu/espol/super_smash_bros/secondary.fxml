@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.super_smash_bros.SecondaryController">
    <children>
-      <ImageView fx:id="viñeta" fitHeight="488.0" fitWidth="582.0" layoutX="283.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="viñeta" fitHeight="522.0" fitWidth="582.0" layoutX="283.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.0">
          <image>
             <Image url="@../../../../taws/viñeta-grande.png" />
          </image>
       </ImageView>
-<<<<<<< Updated upstream
-      <ImageView fx:id="tortuga" fitHeight="284.0" fitWidth="359.0" layoutX="44.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
-=======
-      <ImageView fx:id="tortuga" fitHeight="195.0" fitWidth="311.0" layoutX="61.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
->>>>>>> Stashed changes
+      <ImageView fx:id="tortuga" fitHeight="284.0" fitWidth="359.0" layoutX="25.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../taws/tortuga.png" />
-         </image></ImageView>
+         </image>
+      </ImageView>
    </children>
+   <opaqueInsets>
+      <Insets bottom="20.0" />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="20.0" />
+   </padding>
 </AnchorPane>

@@ -22,6 +22,7 @@ public class App extends Application {
     stage.setFullScreen(true);
     Parent root = FXMLLoader.load(getClass().getResource("secondary.fxml"));
     scene = new Scene(root, Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight());
+    scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
     stage.setScene(scene);
     stage.show();
 
