@@ -1,0 +1,5 @@
+
+Jonathan ligma balls
+
+1;Mario;Bola de fuego:NORMAL:/data/mario/normal.jpg,Capa:LAT:/data/mario/lat.jpg,Supersalto puñetazo:UP:/data/mario/up.jpg,F.L.U.D.D:DOWN:/data/mario/down.jpg;Mario final: /data/mario/final.jpg;El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación. 
+2;Link;
