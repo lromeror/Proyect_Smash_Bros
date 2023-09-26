@@ -12,7 +12,7 @@ for archivo in archivos:
     ruta_completa = os.path.join(carpeta, archivo)
     
     # Define el nuevo nombre del archivo
-    nuevo_nombre = archivo.split(".")[0] + ".png"
+    nuevo_nombre = archivo.split(".")[0] + ".webp"
     
     # Construye la nueva ruta completa del archivo
     nueva_ruta = os.path.join(carpeta, nuevo_nombre)
