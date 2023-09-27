@@ -49,6 +49,11 @@ public class SecondaryController implements Initializable{
     private Text nombre;
     @FXML
     private Button regresar;
+<<<<<<< Updated upstream
+=======
+    private MediaPlayer mediaPlayer;
+    
+>>>>>>> Stashed changes
 
     private MediaPlayer mediaPlayer;
     
@@ -168,10 +173,18 @@ public class SecondaryController implements Initializable{
 
     @FXML
     private void switchToPrimary(MouseEvent event) throws IOException {
+<<<<<<< Updated upstream
         data.cerrarSesion();
         if (mediaPlayer != null){
             mediaPlayer.stop();
         } 
+=======
+        SessionManager.getInstance().cerrarSesion();
+        // Detener la reproducción del video
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
+>>>>>>> Stashed changes
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
