@@ -58,7 +58,7 @@ public class SecondaryController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
-        personaje = new Personaje("King K Rool","king_k_rool.png");
+        personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
 //        nombre.setTextFill(Color.BLACK);
         try{
