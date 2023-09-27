@@ -1,23 +1,24 @@
-
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
+1;Aldeano;Bolsillo:NORMAL:/data/aldeano/normal.jpg,Cohete Giroide:LAT:/data/aldeano/lat.jpg,Casco de globos:UP:/data/aldeano/up.jpg, Leñador:DOWN:/data/aldeano/down.jpg;La casa de mis sueños, Smash Final: /data/aldeano/final.jpg; aldeano.jpg, el tranquilo habitante de Animal Crossing, sorprende en el caos de Super Smash Bros con su astucia y habilidades únicas.
+3;Bayonetta;Clímax balístico:NORMAL:/data/bayonetta/normal.jpg, Tacón lateral / Patada After Burner: LAT:/data/bayonetta/lat.jpg, Giro Brujo:UP:/data/bayonetta/up.jpg, Tiempo Brujo:DOWN: /data/bayonetta/down.jpg; Clímax infernal: /data/bayonetta/final.jpg; bayonetta.jpg; una bruja con un estilo único y letal, desata magia y balas en su lucha contra los demonios
+4;Bowser; Aliento de fuego:NORMAL:/data/bowser/normal.jpg, Martinete giratorio: LAT:/data/bowser/lat.jpg, Fortaleza giratoria:UP:/data/bowser/up.jpg, Bomba Bowser:DOWN: /data/bowser/down.jpg; Giga Bowser: /data/bowser/final.jpg; bowser.jpg; También conocido como el Rey de los Koopas, gobierna el Reino Champiñón con garra de hierro, ¡y siempre planea nuevos y audaces secuestros de la Princesa Peach!
+5;Bowsy; Cañón Minihelikoopa:NORMAL:/data/bowsy/normal.jpg, Atropello: LAT:/data/bowsy/lat.jpg, Salto explosivo:UP:/data/bowsy/up.jpg, Mechakoopa:DOWN: /data/bowsy/down.jpg; Mario Paint Oscuro: /data/bowsy/final.jpg; bowsy.jpg; Bowser Jr. pilota su fiel Minihelikoopa en las batallas, protegiéndose de los ataques mientras lanza travesuras desde el cielo.
+8;Capitán Olimar; Arrancar Pikmin:NORMAL:/data/capitán olimar/normal.jpg, Lanzamiento de Pikmin: LAT:/data/capitán olimar/lat.jpg, Pikmin alados:UP:/data/capitán olimar/up.jpg, Reagrupación de Pikmin:DOWN: /data/capitán olimar/down.jpg; Final del día: /data/capitán olimar/final.jpg; capitán olimar.jpg; el intrépido explorador de Pikmin, se aventura por mundos desconocidos en busca de piezas para reparar su nave espacial, el Dolphin. Con la ayuda de sus leales Pikmin, se enfrenta a desafíos alienígenas en una odisea cósmica.
+9;Captain Falcon; Gancho de fuego:NORMAL:/data/captain falcon/normal.jpg, Salto predador: LAT:/data/captain falcon/lat.jpg, Propulsión Falcon:UP:/data/captain falcon/up.jpg, Propulsión Falcon:DOWN: /data/captain falcon/down.jpg; Blue Falcon: /data/captain falcon/final.jpg; captain falcon.jpg; también conocido como Douglas Jay Falcon, es un piloto de carreras y un valiente luchador conocido por su icónico vehículo, el Blue Falcon. Fuera de la pista, se convierte en un audaz combatiente que desafía a sus oponentes con movimientos poderosos y el famoso 'Falcon Punch'.
+10;Charizard; Lanzallamas:NORMAL:/data/charizard/normal.jpg, Envite Ígneo: LAT:/data/charizard/lat.jpg, Vuelo:UP:/data/charizard/up.jpg, Cambio de Pokémon:DOWN: /data/charizard/down.jpg; Remate Triple: /data/charizard/final.jpg; charizard.jpg; Pokémon tipo Fuego y Volador conocido por su imponente apariencia y habilidades ardientes. Con su aliento de fuego y sus alas poderosas, Charizard es un competidor formidable en la arena de combate de Super Smash Bros. 
+11;Chrom; Hoja Llameante:NORMAL:/data/chrom/chrom.jpg, Danza Doble del Sable: LAT:/data/chrom/lat.jpg, Vuelo Impetuoso:UP:/data/chrom/up.jpg, Bloqueo:DOWN: /data/chrom/down.jpg; Éter del despertar: /data/chrom/final.jpg; chrom.jpg; Como el protagonista de Fire Emblem: Awakening, lidera a su ejército con coraje y honor. Con su espada Falchion en mano, se enfrenta a desafíos épicos y forja alianzas en un mundo de fantasía.
+12; Cloud Strife; Haz espada:NORMAL:/data/cloud strife/normal.jpg, Corte cruzado: LAT:/data/cloud strife/lat.jpg, Riesgoclimático:UP:/data/cloud strife/up.jpg, Cargalímites / Toque final:DOWN: /data/cloud strife/down.jpg; Omnilátigo / Omnilátigo: /data/cloud strife/final.jpg; cloud strife.jpg; de Final Fantasy, conocido por su cabellera y su gran espada Buster Sword. Este guerrero exsoldado emprende aventuras en mundos de fantasía, luchando contra enemigos y enfrentando su propio pasado turbulento.
+13; Corrin; Tiro colmillo dragón:NORMAL:/data/corrin/normal.jpg, Embestida dragón: LAT:/data/corrin/lat.jpg, Ascenso dragón:UP:/data/corrin/up.jpg, Contrataque dragón:DOWN: /data/corrin/down.jpg; Bramido torrencial: /data/corrin/final.jpg; corrin.jpg; descripcion CHATGPT
+14;Daraen; Trueno:NORMAL:/data/daraen/normal.jpg, Arcfire: LAT:/data/daraen/lat.jpg, Elwind:UP:/data/daraen/up.jpg, Nosferatu:DOWN: /data/daraen/down.jpg; Agrupación: /data/daraen/final.jpg; daraen.jpg; Combina su habilidad en la magia y el combate cuerpo a cuerpo con la versatilidad de los tomes para mantener a sus oponentes a raya.
+15;Diddy Kong; Cacahuetola:NORMAL:/data/diddy kong/normal.jpg, Cabriola simiesca: LAT:/data/diddy kong/lat.jpg, Barriles retropropulsados:UP:/data/diddy kong/up.jpg, Monda de plátano:DOWN: /data/diddy kong/down.jpg; Hiperbarriles retropropulsados: /data/diddy kong/final.jpg; diddy kong.jpg; Es un luchador rápido y ágil que utiliza su agilidad y habilidades acrobáticas para desplazarse por el campo de batalla. Además, puede utilizar su jetpack para recuperarse cuando es lanzado fuera del escenario.
+16; Donkey Kong; Puñetazo gigantesco:NORMAL:/data/donkey kong/normal.jpg, Cabezazo: LAT:/data/donkey kong/lat.jpg, Peonza Kong:UP:/data/donkey kong/up.jpg, Palmeo:DOWN: /data/donkey kong/down.jpg; Frenesí selvático: /data/donkey kong/final.jpg; donkey kong.jpg; Es conocido por su increíble fuerza y ataques poderosos, como el puñetazo de viento y el famoso golpe en el suelo que crea ondas de choque.
+17; Dr. Mario; Megavitaminas:NORMAL:/data/dr. mario/normal.jpg, Supersábana: LAT:/data/dr. mario/lat.jpg, Supersalto Puñetazo:UP:/data/dr. mario/up.jpg, Dr. Tornado:DOWN: /data/dr. mario/down.jpg; Dr. Mario Final: /data/dr. mario/final.jpg; dr. mario.jpg; Su presencia en el juego es un homenaje a los juegos clásicos de "Dr. Mario," y su estilo de lucha combina estrategia y precisión.
 
 
 
 (Respeten orden alfa y escriban tal cual como esta en la página [mayúsculas, tildes, etc])
-formato: (personaje; que esta alado:NORMAL:/data/personaje/normal.jpg, lo que esta alado: LAT:/data/personaje/lat.jpg, lo que esta alado:UP:/data/mario/up.jpg, lo que esta alado:DOWN: /data/personaje/down.jpg; lo que esta alado: /data/personaje/final.jpg; personaje.jpg; descripcion CHATGPT)
+
+formato: (personaje; alado:NORMAL:/data/personaje/normal.jpg, alado: LAT:/data/personaje/lat.jpg, alado:UP:/data/mario/up.jpg, alado:DOWN: /data/personaje/down.jpg; alado: /data/personaje/final.jpg; personaje.jpg; descripcion CHATGPT)
+
 INDICE,NOMBRE,MOVIMIENTOS,FINALSMASH,IMAGEN,DESCRIPCION
 1;Mario;Bola de fuego:NORMAL:/data/mario/normal.jpg,Capa:LAT:/data/mario/lat.jpg,Supersalto puñetazo:UP:/data/mario/up.jpg, F.L.U.D.D:DOWN:/data/mario/down.jpg;Mario final: /data/mario/final.jpg;mario.jpg;El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación. 
 2;Link;
@@ -25,9 +26,6 @@ INDICE,NOMBRE,MOVIMIENTOS,FINALSMASH,IMAGEN,DESCRIPCION
 4;Samus;Disparo cargado:NORMAL:/data/samus/normal.jpg,Misil:LAT:/data/samus/lat.jpg,Ataque espiral:UP:/data/samus/up.jpg, Bomba:DOWN:/data/samus/down.jpg;Láser zero: /data/samus/final.jpg;samus.jpg; Samus, la cazarrecompensas intergaláctica, lucha con su icónico traje de energía y arsenal tecnológico devastador.
 16;Sheik;Tormenta de cuchillas:NORMAL:/data/sheik/normal.jpg,Granada fulminante:LAT:/data/sheik/lat.jpg,Desaparición:UP:/data/sheik/up.jpg, Salto delfín:DOWN:/data/sheik/down.jpg;Danza sheika: /data/sheik/final.jpg;samus.jpg; La hábil y misteriosa guerrera ninja emplea velocidad y agilidad sobrenaturales en combate manteniendo su verdadera identidad en secreto.
 ;Shulk;
-1;Aldeano;Bolsillo:NORMAL:/data/aldeano/normal.jpg,Cohete Giroide:LAT:/data/aldeano/lat.jpg,Casco de globos:UP:/data/aldeano/up.jpg, Leñador:DOWN:/data/aldeano/down.jpg;La casa de mis sueños, Smash Final: /data/aldeano/final.jpg; aldeano.jpg, el tranquilo habitante de Animal Crossing, sorprende en el caos de Super Smash Bros con su astucia y habilidades únicas.
-2;Banjo & Kazooie; Disparo de huevos / Arma Alada:NORMAL:/data/banjo/normal.jpg, Ala de las Maravillas: LAT:/data/banjo/lat.jpg, Salto de Muelles de Impacto:UP:/data/banjo/up.jpg, Disparo de Huevos Hacia Atrás:DOWN: /data/banjo/down.jpg; El Poderoso Jinjonator: /data/banjp/final.jpg; personaje.jpg; Banjo, con su leal compañero Kazooie, trae la diversión y la aventura de su mundo a Super Smash Bros. Ultimate
-3;Bayonetta;Clímax balístico:NORMAL:/data/bayonetta/normal.jpg
 
 
 
