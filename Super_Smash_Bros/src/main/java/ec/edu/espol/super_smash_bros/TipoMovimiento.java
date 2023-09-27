@@ -6,8 +6,8 @@ package ec.edu.espol.super_smash_bros;
 
 /**
  *
- * @author Swat
+ * @author josel
  */
-public class Moves {
-    
+public enum TipoMovimiento {
+    NORMAL,LAT,UP,DOWN,FO
 }

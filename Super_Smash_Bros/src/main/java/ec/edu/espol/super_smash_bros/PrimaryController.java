@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -22,9 +24,10 @@ public class PrimaryController implements Initializable{
 
     @FXML
     private VBox content;
-    private SecondaryController estadisticas;
     private ArrayList<Personaje> personajes;
-
+    
+    DataSingleton data = DataSingleton.getInstance();
+    
     private void switchToSecondary() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("secondary.fxml"));
         Parent root = loader.load();
@@ -34,24 +37,23 @@ public class PrimaryController implements Initializable{
         Stage stage = (Stage) content.getScene().getWindow();
         scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
         stage.setScene(scene);
-        
     }
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        personajes = Personaje.readPersonajes("smash.txt");
         int ind = 0;
         for (int i = 0; i < 24; i++){
             HBox row = new HBox();
             for (int j = 0; i < 3; i++){
                 Personaje per = personajes.get(ind);
-                ImageView imgV = new ImageView();
-                //Aqui se setearia la imagen
-                //agregar personaje acontinuacion
-                Tarjeta boton = new Tarjeta();
+                Image img = new Image(per.getImagen());
+                ImageView imgV = new ImageView(img);
+                Tarjeta boton = new Tarjeta(per);
                 boton.getChildren().add(imgV);
                 boton.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t) -> {
                     Personaje p = boton.getPersonaje();
-                    estadisticas.setPersonaje(p);
+                    data.setPersonaje(p);
                     try {
                         switchToSecondary();
                     } catch (IOException ex) {

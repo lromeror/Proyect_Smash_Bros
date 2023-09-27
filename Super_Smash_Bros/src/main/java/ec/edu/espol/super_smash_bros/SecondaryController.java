@@ -50,13 +50,11 @@ public class SecondaryController implements Initializable{
     @FXML
     private Button regresar;
     
-    public void setPersonaje(Personaje p){
-        this.personaje = p;
-    }
-    
+    DataSingleton data = DataSingleton.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        personaje = data.getPersonaje();
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
         personaje = new Personaje("King K Rool","king_k_rool.png");
         nombre.setText(personaje.getName());
@@ -189,12 +187,12 @@ public class SecondaryController implements Initializable{
             for (int i=0; i<31; i++){
                 try{
                 Platform.runLater(()->{
-                imagenLuchador.setImage(new Image(carpetaInicio+per.getNomArch()));
+                imagenLuchador.setImage(new Image(carpetaInicio+per.getImagen()));
                 // Depende de como este el nomnre de la imagen, si con extension o no
                 });
                 Thread.sleep(1000);
                 Platform.runLater(()->{
-                    imagenLuchador.setImage(new Image(carpetaFin+per.getNomArch()));
+                    imagenLuchador.setImage(new Image(carpetaFin+per.getImagen()));
                     // Depende de como este el nomnre de la imagen, si con extension o no
                 });
                 Thread.sleep(1000);
