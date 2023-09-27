@@ -65,5 +65,7 @@ public class PrimaryController implements Initializable{
             }
             content.getChildren().add(row);
         }
+        VBox v = new VBox();
+        ImageView ima = new ImageView(new Image(""));
     }
 }
