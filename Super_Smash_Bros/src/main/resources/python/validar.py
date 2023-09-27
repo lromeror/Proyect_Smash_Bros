@@ -29,7 +29,7 @@ for u in range(3):  # numero de lineas que no sirven
     smash_p.readline()
 videos_l = [x.strip("\n ").split('.')[0] for x in videos.readlines()]
 fotos_l = [y.strip("\n").split('.')[0]for y in fotos.readlines()]
-smash_p_l = [z.strip("\n").split(';')[1].lower().replace(" ","_").replace(".","") for z in smash_p.readlines()]
+smash_p_l = [z.strip("\n").split(';')[4].split('.')[0].strip() for z in smash_p.readlines()]
 videos.close()
 fotos.close()
 smash_p.close()
