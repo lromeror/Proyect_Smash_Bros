@@ -79,11 +79,14 @@ public class Personaje implements Serializable{
     public static ArrayList<Personaje> readPersonajes(String nomfile){
         ArrayList<Personaje> personajes = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(nomfile))){
+            br.readLine();
+            br.readLine();
+            br.readLine();
             String line;
             while((line = br.readLine()) != null){
                 String[] tokens = line.split(";");
                 String nombre = tokens[1];
-                String image = tokens[4];
+                String image = tokens[4].replace("jpg", "png");
                 String descripcion = tokens[5];
                 String[] FinalMove = tokens[3].split(":");
                 Move FO = new Move(FinalMove[0],TipoMovimiento.FO, FinalMove[1]);

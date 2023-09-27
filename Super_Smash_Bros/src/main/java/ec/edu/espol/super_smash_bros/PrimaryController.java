@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class PrimaryController implements Initializable{
@@ -45,7 +46,7 @@ public class PrimaryController implements Initializable{
         int ind = 0;
         for (int i = 0; i < 24; i++){
             HBox row = new HBox();
-            for (int j = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
                 Personaje per = personajes.get(ind);
                 Image img = new Image(per.getImagen());
                 ImageView imgV = new ImageView(img);
@@ -65,7 +66,10 @@ public class PrimaryController implements Initializable{
             }
             content.getChildren().add(row);
         }
-        VBox v = new VBox();
-        ImageView ima = new ImageView(new Image(""));
+        
+        ImageView ima = new ImageView(new Image("taws/footer.jpg"));
+        content.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth());
+        ima.setFitWidth(content.getWidth());
+        content.getChildren().add(ima);
     }
 }

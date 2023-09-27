@@ -20,7 +20,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
     stage.setFullScreen(true);
-    Parent root = FXMLLoader.load(getClass().getResource("secondary.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
     scene = new Scene(root, Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight());
     scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
     stage.setScene(scene);
