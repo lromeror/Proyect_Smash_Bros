@@ -5,6 +5,7 @@ meta_knight
 pit
 bowser_jr
 chrom
+mythra
 snake
 villager
 mario
@@ -14,6 +15,7 @@ zero_suit_samus
 ice_climbers
 mr_game_and_watch
 mega_man
+pt_charizard
 greninja
 young_link
 ness
@@ -26,6 +28,7 @@ wolf
 dark_samus
 dr_mario
 simon
+pyra
 sheik
 jigglypuff
 yoshi
@@ -38,14 +41,17 @@ zelda
 marth
 kirby
 mewtwo
+piranha_plant
 lucas
 wario
 little_mac
+pt_squirtle
 bayonetta
 ridley
 incineroar
 ryu
 isabelle
+pt_ivysaur
 king_k_rool
 lucina
 captain_falcon
@@ -67,11 +73,8 @@ pikachu
 inkling
 ganondorf
 diddy_kong
-link
 ike
+Solo hay video
+Link
 Solo hay foto
-pt_ivysaur
-pt_squirtle
-pyra
-mythra
-pt_charizard
+link
