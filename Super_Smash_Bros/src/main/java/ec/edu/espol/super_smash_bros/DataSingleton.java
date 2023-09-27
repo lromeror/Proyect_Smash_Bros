@@ -27,4 +27,8 @@ public class DataSingleton {
     public void setPersonaje(Personaje p){
         this.personaje = p;
     }
+    
+    public void cerrarSesion() {
+        this.personaje = null;
+    }
 }

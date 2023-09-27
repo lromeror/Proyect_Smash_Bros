@@ -12,7 +12,18 @@
    <center>
       <ScrollPane prefHeight="376.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="content" prefHeight="322.0" prefWidth="581.0" />
+            <VBox fx:id="container">
+               <children>
+                  <VBox fx:id="content" prefHeight="322.0" prefWidth="581.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="40.0" top="30.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
          </content></ScrollPane>
    </center>
    <top>

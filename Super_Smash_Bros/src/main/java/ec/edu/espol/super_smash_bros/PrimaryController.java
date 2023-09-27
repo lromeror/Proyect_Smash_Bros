@@ -3,14 +3,15 @@ package ec.edu.espol.super_smash_bros;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ScrollPane;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -19,7 +20,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -29,7 +33,9 @@ public class PrimaryController implements Initializable{
     private VBox content;
     private ArrayList<Personaje> personajes;
     
-//    DataSingleton data = DataSingleton.getInstance();
+    DataSingleton data = DataSingleton.getInstance();
+    @FXML
+    private VBox container;
     
     private void switchToSecondary() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("secondary.fxml"));
@@ -44,7 +50,8 @@ public class PrimaryController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        content.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth()-15);
+        container.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth()-17);
+        content.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth()-17);
         personajes = Personaje.readPersonajes("smash.txt");
         int ind = 0;
         for (int i = 0; i < 19; i++){
@@ -63,23 +70,29 @@ public class PrimaryController implements Initializable{
                     
                     ImageView imgV = new ImageView(img);
                     Text text = new Text(per.getName());
-                    imgV.setFitWidth(300);
-                    
-                    Tarjeta boton = new Tarjeta();
+                    text.setFont(Font.font("Impact",FontWeight.BOLD,40));
+                    text.setWrappingWidth(295);
+                    text.setTextAlignment(TextAlignment.CENTER);
+                    imgV.setFitWidth(295);
+                    imgV.setFitHeight(300);
+                    Tarjeta boton = new Tarjeta(per);
                     boton.setPrefWidth(100);
-                    VBox.setMargin(boton, new Insets(20, 5, 5, 20));
-                    boton.getChildren().add(imgV);
-                    boton.getChildren().add(text);
+                    VBox vb = new VBox();
+                    vb.setPrefWidth(300);
+                    vb.setAlignment(Pos.CENTER);
+                    vb.getChildren().add(imgV);
+                    vb.getChildren().add(text);
+                    boton.getChildren().add(vb);
                     boton.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t) -> {
-//                        Personaje p = boton.getPersonaje();
-//                        data.setPersonaje(p);
+                        Personaje p = boton.getPersonaje();
+                        data.setPersonaje(p);
                         try {
-                            SessionManager.getInstance().setPersonaje(per);
                             switchToSecondary();
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
                     });
+                    boton.setPadding(new Insets(0,65,65,0));
                     row.getChildren().add(boton);
                     ind++;
                 }
@@ -97,15 +110,12 @@ public class PrimaryController implements Initializable{
                     imgV.setFitWidth(300);
                     
                     Tarjeta boton = new Tarjeta();
-//                    boton.setPrefWidth(100);
-//                    VBox.setMargin(boton, new Insets(20, 5, 5, 20));
                     boton.getChildren().add(imgV);
                     boton.getChildren().add(text);
                     boton.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t) -> {
-//                        Personaje p = boton.getPersonaje();
-//                        data.setPersonaje(p);
+                        Personaje p = boton.getPersonaje();
+                        data.setPersonaje(p);
                         try {
-                            SessionManager.getInstance().setPersonaje(per);
                             switchToSecondary();
                         } catch (IOException ex) {
                             ex.printStackTrace();
@@ -116,13 +126,15 @@ public class PrimaryController implements Initializable{
                 }
             }
             content.getChildren().add(row);
+            content.setMargin(row, new Insets(20,0,0,20));
         }
         
         ImageView ima = new ImageView(new Image("taws/footer.jpg"));
         
 //        ima.fitWidthProperty().bind(ima.fitHeightProperty());
-        ima.setFitWidth(Screen.getPrimary().getVisualBounds().getWidth()-15);
+        ima.setFitWidth(Screen.getPrimary().getVisualBounds().getWidth()-17);
+        ima.setFitHeight(2400);
 //        ima.setFitHeight();
-        content.getChildren().add(ima);
+        container.getChildren().add(ima);
     }
 }

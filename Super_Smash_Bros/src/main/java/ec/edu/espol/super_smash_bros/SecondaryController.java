@@ -49,11 +49,15 @@ public class SecondaryController implements Initializable{
     private Text nombre;
     @FXML
     private Button regresar;
-    
 
+    private MediaPlayer mediaPlayer;
+    
+    
+    DataSingleton data = DataSingleton.getInstance();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        personaje = SessionManager.getInstance().getPersonaje();
+        personaje = data.getPersonaje();
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
         personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
@@ -97,7 +101,7 @@ public class SecondaryController implements Initializable{
         
         // Crear Media, MediaPlayer y MediaView
         Media media = new Media(videoUrl);
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer = new MediaPlayer(media);
         MediaView mediaView = new MediaView(mediaPlayer);
         
         // Ajustar el tamaño del MediaView a 600px x 600px
@@ -164,7 +168,10 @@ public class SecondaryController implements Initializable{
 
     @FXML
     private void switchToPrimary(MouseEvent event) throws IOException {
-        SessionManager.getInstance().cerrarSesion();
+        data.cerrarSesion();
+        if (mediaPlayer != null){
+            mediaPlayer.stop();
+        } 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
