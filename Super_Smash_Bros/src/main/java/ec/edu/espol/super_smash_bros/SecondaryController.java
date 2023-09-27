@@ -50,11 +50,10 @@ public class SecondaryController implements Initializable{
     @FXML
     private Button regresar;
     
-    DataSingleton data = DataSingleton.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        personaje = data.getPersonaje();
+        personaje = SessionManager.getInstance().getPersonaje();
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
         personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
@@ -165,6 +164,7 @@ public class SecondaryController implements Initializable{
 
     @FXML
     private void switchToPrimary(MouseEvent event) throws IOException {
+        SessionManager.getInstance().cerrarSesion();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));

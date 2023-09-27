@@ -117,8 +117,13 @@ public class Personaje implements Serializable{
                 personajes.add(personaje);
             }
             
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        } catch (Exception ex) {
+            Move[] movimientos = {new Move("Bola de fuego",TipoMovimiento.NORMAL, "/data/mario/normal.jpg"),
+                    new Move("Capa",TipoMovimiento.LAT, "/data/mario/lat.jpg"),
+                    new Move("Supersalto puñetazo",TipoMovimiento.UP, "/data/mario/up.jpg"),
+                    new Move("F.L.U.D.D",TipoMovimiento.DOWN, "/data/mario/down.jpg")};
+            Personaje p = new Personaje("Mario",movimientos,new Move("Mario final",TipoMovimiento.FO, "/data/mario/final.jpg"), "mario.jpg","El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación.");
+            personajes.add(p);
         }
         
         return personajes;
