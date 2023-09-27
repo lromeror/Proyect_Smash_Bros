@@ -67,11 +67,9 @@ pikachu
 inkling
 ganondorf
 diddy_kong
-ike
-Solo hay video
-Link
-Solo hay foto
 link
+ike
+Solo hay foto
 pt_ivysaur
 pt_squirtle
 pyra
