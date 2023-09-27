@@ -1,6 +1,4 @@
-1;Aldeano;Bolsillo:NORMAL:/data/aldeano/normal.jpg,Cohete Giroide:LAT:/data/aldeano/lat.jpg,Casco de globos:UP:/data/aldeano/up.jpg, Leñador:DOWN:/data/aldeano/down.jpg;La casa de mis sueños, Smash Final: /data/aldeano/final.jpg; aldeano.jpg, el tranquilo habitante de Animal Crossing, sorprende en el caos de Super Smash Bros con su astucia y habilidades únicas.
-2;Banjo; Disparo de huevos / Arma Alada:NORMAL:/data/banjo/normal.jpg, Ala de las Maravillas: LAT:/data/banjo/lat.jpg, Salto de Muelles de Impacto:UP:/data/banjo/up.jpg, Disparo de Huevos Hacia Atrás:DOWN: /data/banjo/down.jpg; El Poderoso Jinjonator: /data/banjp/final.jpg; personaje.jpg; Banjo, con su leal compañero Kazooie, trae la diversión y la aventura de su mundo a Super Smash Bros. Ultimate
-3;Bayonetta;Clímax balístico:NORMAL:/data/bayonetta/normal.jpg
+
 4
 5
 6
@@ -27,6 +25,9 @@ INDICE,NOMBRE,MOVIMIENTOS,FINALSMASH,IMAGEN,DESCRIPCION
 4;Samus;Disparo cargado:NORMAL:/data/samus/normal.jpg,Misil:LAT:/data/samus/lat.jpg,Ataque espiral:UP:/data/samus/up.jpg, Bomba:DOWN:/data/samus/down.jpg;Láser zero: /data/samus/final.jpg;samus.jpg; Samus, la cazarrecompensas intergaláctica, lucha con su icónico traje de energía y arsenal tecnológico devastador.
 16;Sheik;Tormenta de cuchillas:NORMAL:/data/sheik/normal.jpg,Granada fulminante:LAT:/data/sheik/lat.jpg,Desaparición:UP:/data/sheik/up.jpg, Salto delfín:DOWN:/data/sheik/down.jpg;Danza sheika: /data/sheik/final.jpg;samus.jpg; La hábil y misteriosa guerrera ninja emplea velocidad y agilidad sobrenaturales en combate manteniendo su verdadera identidad en secreto.
 ;Shulk;
+1;Aldeano;Bolsillo:NORMAL:/data/aldeano/normal.jpg,Cohete Giroide:LAT:/data/aldeano/lat.jpg,Casco de globos:UP:/data/aldeano/up.jpg, Leñador:DOWN:/data/aldeano/down.jpg;La casa de mis sueños, Smash Final: /data/aldeano/final.jpg; aldeano.jpg, el tranquilo habitante de Animal Crossing, sorprende en el caos de Super Smash Bros con su astucia y habilidades únicas.
+2;Banjo & Kazooie; Disparo de huevos / Arma Alada:NORMAL:/data/banjo/normal.jpg, Ala de las Maravillas: LAT:/data/banjo/lat.jpg, Salto de Muelles de Impacto:UP:/data/banjo/up.jpg, Disparo de Huevos Hacia Atrás:DOWN: /data/banjo/down.jpg; El Poderoso Jinjonator: /data/banjp/final.jpg; personaje.jpg; Banjo, con su leal compañero Kazooie, trae la diversión y la aventura de su mundo a Super Smash Bros. Ultimate
+3;Bayonetta;Clímax balístico:NORMAL:/data/bayonetta/normal.jpg
 
 
 
