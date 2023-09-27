@@ -1,6 +1,4 @@
-1;Aldeano;Bolsillo:NORMAL:/data/aldeano/normal.jpg,Cohete Giroide:LAT:/data/aldeano/lat.jpg,Casco de globos:UP:/data/aldeano/up.jpg, Leñador:DOWN:/data/aldeano/down.jpg;La casa de mis sueños, Smash Final: /data/aldeano/final.jpg; aldeano.jpg, el tranquilo habitante de Animal Crossing, sorprende en el caos de Super Smash Bros con su astucia y habilidades únicas.
-2;Banjo; Disparo de huevos / Arma Alada:NORMAL:/data/banjo/normal.jpg, Ala de las Maravillas: LAT:/data/banjo/lat.jpg, Salto de Muelles de Impacto:UP:/data/banjo/up.jpg, Disparo de Huevos Hacia Atrás:DOWN: /data/banjo/down.jpg; El Poderoso Jinjonator: /data/banjp/final.jpg; personaje.jpg; Banjo, con su leal compañero Kazooie, trae la diversión y la aventura de su mundo a Super Smash Bros. Ultimate
-3;Bayonetta;Clímax balístico:NORMAL:/data/bayonetta/normal.jpg
+
 4
 5
 6
@@ -33,9 +31,9 @@ INDICE,NOMBRE,MOVIMIENTOS,FINALSMASH,IMAGEN,DESCRIPCION
 
 
 
-
-
-
+1;Aldeano;Bolsillo:NORMAL:/data/aldeano/normal.jpg,Cohete Giroide:LAT:/data/aldeano/lat.jpg,Casco de globos:UP:/data/aldeano/up.jpg, Leñador:DOWN:/data/aldeano/down.jpg;La casa de mis sueños, Smash Final: /data/aldeano/final.jpg; aldeano.jpg, el tranquilo habitante de Animal Crossing, sorprende en el caos de Super Smash Bros con su astucia y habilidades únicas.
+2;Banjo & Kazooie; Disparo de huevos / Arma Alada:NORMAL:/data/banjo/normal.jpg, Ala de las Maravillas: LAT:/data/banjo/lat.jpg, Salto de Muelles de Impacto:UP:/data/banjo/up.jpg, Disparo de Huevos Hacia Atrás:DOWN: /data/banjo/down.jpg; El Poderoso Jinjonator: /data/banjp/final.jpg; personaje.jpg; Banjo, con su leal compañero Kazooie, trae la diversión y la aventura de su mundo a Super Smash Bros. Ultimate
+3;Bayonetta;Clímax balístico:NORMAL:/data/bayonetta/normal.jpg
 1;Entrenador Pokémon;Cambio de Pokémon:DOWN:/data/entrenadorpokémon/down.jpg;Remate Triple: /data/entrenadorpokémon/final.jpg;entrenadorpokémon.jpg; Entrenador Pokémon cambia entre Squirtle, Ivysaur y Charizard en combate.
 2;Estela y Destello;Tiro Destello:NORMAL:/data/esteladestello/normal.jpg,Trozos de estrella:LAT:/data/esteladestello/lat.jpg, Salto Estelar:UP:/data/esteladestello/up.jpg, Antigravedad:DOWN:/data/esteladestello/down.jpg;Hiperestrella: /data/esteladestello/final.jpg;esteladestello.jpg; Estela y Destello, dos espíritus celestiales, brindan apoyo y defensa a los luchadores en Super Smash Bros. Ultimate.
 3;Falco;Blaster:NORMAL:/data/falco/normal.jpg,Fantasma Falco:LAT:/data/falco/lat.jpg,Pájaro de fuego:UP:/data/falco/up.jpg, Reflector:DOWN:/data/falco/down.jpg;Equipo Star Fox:/data/falco/final.jpg;falco.jpg; Falco, un piloto habilidoso, usa velocidad y ataques láser en Super Smash Bros. Ultimate para dominar el aire.
