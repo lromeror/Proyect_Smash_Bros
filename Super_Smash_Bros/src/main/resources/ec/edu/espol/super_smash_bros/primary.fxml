@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.super_smash_bros.PrimaryController">
    <center>
@@ -16,15 +16,24 @@
          </content></ScrollPane>
    </center>
    <top>
-      <HBox prefHeight="73.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="149.0" prefWidth="600.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="73.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true" />
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="457.0" text="Super Smash" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="31.0" />
-               </font>
-            </Label>
+            <ImageView fitHeight="140.0" fitWidth="382.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../taws/logo-horizontal.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="300.0" />
+               </HBox.margin></ImageView>
+            <ImageView fitHeight="113.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../taws/smash.jpg" />
+               </image>
+            </ImageView>
          </children>
+         <padding>
+            <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+         </padding>
       </HBox>
    </top>
 </BorderPane>
