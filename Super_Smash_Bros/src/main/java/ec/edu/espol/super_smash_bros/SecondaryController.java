@@ -49,15 +49,9 @@ public class SecondaryController implements Initializable{
     private Text nombre;
     @FXML
     private Button regresar;
-<<<<<<< HEAD
-=======
-    private MediaPlayer mediaPlayer;
-<<<<<<< Updated upstream
-=======
-    
->>>>>>> Stashed changes
->>>>>>> 15f4b7176ea774aab44e18bf0fdc0511804e7267
 
+    private MediaPlayer mediaPlayer;
+    
     DataSingleton data = DataSingleton.getInstance();
     
     @Override
@@ -78,8 +72,8 @@ public class SecondaryController implements Initializable{
         
 //        
         // Establece el tamaño del AnchorPane para que coincida con el tamaño de la pantalla
-        anchorPane.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth());
-        anchorPane.setPrefHeight(Screen.getPrimary().getVisualBounds().getHeight());
+//        anchorPane.setPrefWidth(Screen.getPrimary().getVisualBounds().getWidth());
+//        anchorPane.setPrefHeight(Screen.getPrimary().getVisualBounds().getHeight());
         anchorPane.widthProperty().addListener((observableValue, oldWidth, newWidth) -> adjustSizesAndPositions());
         anchorPane.heightProperty().addListener((observableValue, oldHeight, newHeight) -> adjustSizesAndPositions());
         // Posicionar la tortuga en la esquina inferior izquierda
@@ -173,33 +167,16 @@ public class SecondaryController implements Initializable{
 
     @FXML
     private void switchToPrimary(MouseEvent event) throws IOException {
-<<<<<<< HEAD
-
-=======
-<<<<<<< Updated upstream
         
->>>>>>> 15f4b7176ea774aab44e18bf0fdc0511804e7267
         data.cerrarSesion();
         if (mediaPlayer != null){
             mediaPlayer.stop();
         } 
-<<<<<<< HEAD
-        
 
-=======
-
-=======
-        SessionManager.getInstance().cerrarSesion();
-        // Detener la reproducción del video
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
-        }
->>>>>>> Stashed changes
->>>>>>> 15f4b7176ea774aab44e18bf0fdc0511804e7267
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight());
         Stage stage = (Stage) anchorPane.getScene().getWindow();
         stage.setFullScreen(true);
         scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());

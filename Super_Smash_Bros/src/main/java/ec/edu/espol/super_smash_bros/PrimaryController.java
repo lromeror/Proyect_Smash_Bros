@@ -41,7 +41,7 @@ public class PrimaryController implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("secondary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight());
         SecondaryController controlador = loader.getController(); 
         Stage stage = (Stage) content.getScene().getWindow();
         stage.setFullScreen(true);
