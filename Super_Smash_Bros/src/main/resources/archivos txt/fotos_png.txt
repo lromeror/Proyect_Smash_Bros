@@ -17,6 +17,7 @@ link.png
 sonic.png
 pikachu.png
 lucas.png
+piranha_plant.png
 mewtwo.png
 kirby.png
 wario.png

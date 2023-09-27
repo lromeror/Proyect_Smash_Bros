@@ -4,6 +4,7 @@ meta_knight.mp4
 pit.mp4
 bowser_jr.mp4
 chrom.mp4
+mythra.mp4
 snake.mp4
 villager.mp4
 mario.mp4
@@ -13,6 +14,7 @@ zero_suit_samus.mp4
 ice_climbers.mp4
 mr_game_and_watch.mp4
 mega_man.mp4
+pt_charizard.mp4
 greninja.mp4
 young_link.mp4
 ness.mp4
@@ -25,6 +27,7 @@ wolf.mp4
 dark_samus.mp4
 dr_mario.mp4
 simon.mp4
+pyra.mp4
 sheik.mp4
 jigglypuff.mp4
 yoshi.mp4
@@ -37,14 +40,17 @@ zelda.mp4
 marth.mp4
 kirby.mp4
 mewtwo.mp4
+piranha_plant.mp4
 lucas.mp4
 wario.mp4
 little_mac.mp4
+pt_squirtle.mp4
 bayonetta.mp4
 ridley.mp4
 incineroar.mp4
 ryu.mp4
 isabelle.mp4
+pt_ivysaur.mp4
 king_k_rool.mp4
 lucina.mp4
 captain_falcon.mp4
@@ -58,7 +64,7 @@ robin.mp4
 bowser.mp4
 daisy.mp4
 lucario.mp4
-Link.mp4
+link.mp4
 ken.mp4
 sonic.mp4
 luigi.mp4
