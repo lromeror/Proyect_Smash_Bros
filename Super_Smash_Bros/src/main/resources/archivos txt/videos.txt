@@ -64,7 +64,7 @@ robin.mp4
 bowser.mp4
 daisy.mp4
 lucario.mp4
-Link.mp4
+link.mp4
 ken.mp4
 sonic.mp4
 luigi.mp4
