@@ -50,8 +50,11 @@ public class SecondaryController implements Initializable{
     @FXML
     private Button regresar;
     private MediaPlayer mediaPlayer;
+<<<<<<< Updated upstream
     
     DataSingleton data = DataSingleton.getInstance();
+=======
+>>>>>>> Stashed changes
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -166,11 +169,19 @@ public class SecondaryController implements Initializable{
 
     @FXML
     private void switchToPrimary(MouseEvent event) throws IOException {
+<<<<<<< Updated upstream
         
         data.cerrarSesion();
         if (mediaPlayer != null){
             mediaPlayer.stop();
         } 
+=======
+        SessionManager.getInstance().cerrarSesion();
+        // Detener la reproducción del video
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
+>>>>>>> Stashed changes
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
