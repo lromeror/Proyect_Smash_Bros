@@ -49,11 +49,6 @@ public class SecondaryController implements Initializable{
     private Text nombre;
     @FXML
     private Button regresar;
-<<<<<<< Updated upstream
-=======
-    private MediaPlayer mediaPlayer;
-    
->>>>>>> Stashed changes
 
     private MediaPlayer mediaPlayer;
     
@@ -64,7 +59,7 @@ public class SecondaryController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         personaje = data.getPersonaje();
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
-        personaje = new Personaje("Bayonetta","bayonetta.png");
+//        personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
 //        nombre.setTextFill(Color.BLACK);
         try{
@@ -74,7 +69,7 @@ public class SecondaryController implements Initializable{
             e.printStackTrace();
         }
         nombre.setTextAlignment(TextAlignment.CENTER);
-        nombre.setWrappingWidth(430);
+        nombre.setWrappingWidth(440);
         
 //        
         // Establece el tamaño del AnchorPane para que coincida con el tamaño de la pantalla
@@ -100,7 +95,7 @@ public class SecondaryController implements Initializable{
         // Inicia la animación
         translateTransition.play();
         
-        String videoPath = "src/main/resources/Video_prueba/01_ Mario – Super Smash Bros. Ultimate.mp4";
+        String videoPath = "src/main/resources/videos_Smash_bros/"+personaje.getImagen().replace("png","mp4");
         File videoFile = new File(videoPath);
         String videoUrl = videoFile.toURI().toString();
         
@@ -173,23 +168,19 @@ public class SecondaryController implements Initializable{
 
     @FXML
     private void switchToPrimary(MouseEvent event) throws IOException {
-<<<<<<< Updated upstream
+
         data.cerrarSesion();
         if (mediaPlayer != null){
             mediaPlayer.stop();
         } 
-=======
-        SessionManager.getInstance().cerrarSesion();
-        // Detener la reproducción del video
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
-        }
->>>>>>> Stashed changes
+        
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) anchorPane.getScene().getWindow();
+        stage.setFullScreen(true);
         scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
         stage.setScene(scene);
     }

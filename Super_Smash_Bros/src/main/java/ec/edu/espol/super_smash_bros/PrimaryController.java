@@ -44,6 +44,7 @@ public class PrimaryController implements Initializable{
         Scene scene = new Scene(root);
         SecondaryController controlador = loader.getController(); 
         Stage stage = (Stage) content.getScene().getWindow();
+        stage.setFullScreen(true);
         scene.getStylesheets().add(getClass().getResource("Styles/style1.css").toExternalForm());
         stage.setScene(scene);
     }
