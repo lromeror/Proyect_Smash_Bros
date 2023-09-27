@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class Personaje implements Serializable{
     
     private String name;
+<<<<<<< HEAD
     private Move[] moves = new Move[4];
     private Move FO;
     private String imagen;
@@ -29,6 +30,16 @@ public class Personaje implements Serializable{
         this.FO = FO;
         this.imagen = imagen;
         this.descripcion = descripcion;
+=======
+    private String nomArch;
+    private Move[] moves = new Move[4];
+    private String descripcion;
+    private FS fs;
+    
+    public Personaje(String name_p, Move[] moves_a){
+        name = name_p;
+        moves = moves_a;
+>>>>>>> 18da899 (Clases)
     }
     
     public Personaje(String name, String imagen){
@@ -60,6 +71,13 @@ public class Personaje implements Serializable{
         this.name = name;
     }
 
+<<<<<<< HEAD
+=======
+    public Move[] getMoves() {
+        return moves;
+    }
+
+>>>>>>> 18da899 (Clases)
     public void setMoves(Move[] moves) {
         this.moves = moves;
     }
