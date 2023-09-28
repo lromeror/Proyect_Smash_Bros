@@ -21,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -53,10 +54,20 @@ public class SecondaryController implements Initializable{
     private MediaPlayer mediaPlayer;
     
     DataSingleton data = DataSingleton.getInstance();
+    @FXML
+    private HBox cuadroTime;
+    @FXML
+    private ImageView imagen1;
+    @FXML
+    private ImageView imagen2;
+    @FXML
+    private VBox cuadroPreguntas;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         personaje = data.getPersonaje();
+       
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
 //        personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
@@ -130,9 +141,15 @@ public class SecondaryController implements Initializable{
 
         // Iniciar la reproducción del video
         mediaPlayer.play();
+//        VBox datos = new VBox();
+//        VBox movimientos = movimientos();
+//        Text descrip = new Text(personaje.getDescripcion());
+//        datos.getChildren().addAll(movimientos,descrip);
 //        imagenLuchador.setFitHeight(900);
         PersonajeHablando hilo1 = new PersonajeHablando(personaje);
         hilo1.start();
+        
+        
         
         
     }
@@ -211,5 +228,42 @@ public class SecondaryController implements Initializable{
             }
             }
         }
+    }
+    
+    public VBox movimientos(){
+        VBox general = new VBox();
+        HBox general1 = new HBox();
+        HBox fSmash = new HBox();
+        ImageView paso = new ImageView(new Image("taws/regresar.png"));
+        ImageView move = new ImageView(new Image(personaje.getFO().getImagen()));
+        Text texto = new Text(personaje.getFO().getName()+"\n"+personaje.getFO().getTipo());
+        fSmash.getChildren().addAll(paso,move,texto);
+        VBox general2 = new VBox();
+        VBox general3 = new VBox();
+        
+        HBox mov1 = completHboxMove("taws/regresar.png",personaje.getMoves()[0]);
+        
+        
+        HBox mov2 = completHboxMove("taws/regresar.png",personaje.getMoves()[1]);
+        HBox mov3 = completHboxMove("taws/regresar.png",personaje.getMoves()[2]);
+        HBox mov4 = completHboxMove("taws/regresar.png",personaje.getMoves()[3]);
+        general2.getChildren().addAll(mov1,mov3);
+        general3.getChildren().addAll(mov2,mov4);
+        general1.getChildren().addAll(general2, general3);
+        general.getChildren().addAll(general1, fSmash);
+        return general;
+    }
+    
+    
+    public HBox completHboxMove(String rutaPaso,Move movimiento){
+        HBox h = new HBox();
+        ImageView paso = new ImageView(new Image(rutaPaso));
+        VBox movi = new VBox();
+        ImageView imgMove = new ImageView(new Image(movimiento.getImagen()));
+        Text nombre = new Text(movimiento.getName()+"\n"+movimiento.getTipo());
+        movi.getChildren().addAll(imgMove, nombre);
+        h.getChildren().addAll(paso, movi);
+        return h;
+        
     }
 }
