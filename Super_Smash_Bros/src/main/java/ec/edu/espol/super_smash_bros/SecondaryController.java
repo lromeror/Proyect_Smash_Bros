@@ -61,15 +61,13 @@ public class SecondaryController implements Initializable{
     DataSingleton data = DataSingleton.getInstance();
     @FXML
     private HBox cuadroTime;
-    @FXML
     private ImageView imagen1;
-    @FXML
     private ImageView imagen2;
     @FXML
     private VBox cuadroPreguntas;
     @FXML
     private Label label_reloj;
-    private PoderesCambiando poderes;
+//    private PoderesCambiando poderes;
     @FXML
     private Button opcion1;
     @FXML
@@ -88,6 +86,17 @@ public class SecondaryController implements Initializable{
 
         personaje = data.getPersonaje();
         rellenarPreguntas(personaje);
+        AnchorPane.setBottomAnchor(cuadroPreguntas, 30.0);
+        AnchorPane.setRightAnchor(cuadroPreguntas, 120.0);
+        AnchorPane.setTopAnchor(cuadroTime, 200.0);
+        AnchorPane.setRightAnchor(cuadroTime, 500.0);
+        opcion1.getStyleClass().add("rounded");
+        opcion2.getStyleClass().add("rounded");
+        opcion3.getStyleClass().add("rounded");
+        opcion4.getStyleClass().add("rounded");
+        labelpregunta.setWrapText(true);
+        labelpregunta.setMaxWidth(600);
+//        labelpregunta.setWrappingWidth(440);
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
 //        personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
@@ -167,14 +176,13 @@ public class SecondaryController implements Initializable{
 //        datos.getChildren().addAll(movimientos,descrip);
 //        imagenLuchador.setFitHeight(900);
         PersonajeHablando hilo1 = new PersonajeHablando(personaje);
-        poderes = new PoderesCambiando(personaje);
+//        poderes = new PoderesCambiando(personaje);
         Reloj reloj = new Reloj();
         reloj.start();
         hilo1.start();
-        poderes.start();
+//        poderes.start();
         
-        if (label_reloj.getText().equals("00"))
-            msg.setText("Perdiste");
+        
     }
     
     private void adjustSizesAndPositions() {
@@ -200,8 +208,8 @@ public class SecondaryController implements Initializable{
         AnchorPane.setBottomAnchor(regresar, paneHeight * 0.01);
         AnchorPane.setRightAnchor(regresar, paneWidth * 0.01);
         
-        AnchorPane.setTopAnchor(nombre, 80.0);
-        AnchorPane.setRightAnchor(nombre, 400.0);
+        AnchorPane.setTopAnchor(nombre, 70.0);
+        AnchorPane.setRightAnchor(nombre, 350.0);
         
     }
 
@@ -212,7 +220,7 @@ public class SecondaryController implements Initializable{
         if (mediaPlayer != null){
             mediaPlayer.stop();
         } 
-        poderes.interrupt();
+//        poderes.interrupt();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
@@ -255,45 +263,45 @@ public class SecondaryController implements Initializable{
     
     
     
-    public class PoderesCambiando extends Thread{
-        
-        private String[] paths = new String[4];
-        public PoderesCambiando(Personaje p){ 
-            Move[] m = p.getMoves();
-            for(int i = 0; i<4; i++){
-                try{
-                    this.paths[i] = m[i].getImagen();
-                }
-                //zzzz
-                catch(Exception e){
-                    this.paths[i] = "";
-                }
-            }
-        }
-
-        public void run(){
-            // Imaginando que existe imv_r1 y imv_r2
-        while (true){
-            try{
-                Platform.runLater(() -> {
-                    imagen1.setImage(new Image(this.paths[0]));
-                    imagen2.setImage(new Image(this.paths[1]));
-                });
-                
-                Thread.sleep(5000);
-                Platform.runLater(() -> {
-                    imagen1.setImage(new Image(this.paths[2]));
-                    imagen2.setImage(new Image(this.paths[3]));
-                });
-                
-                Thread.sleep(5000);
-            }
-            catch(InterruptedException e){
-                
-            }
-            }
-        }
-    }
+//    public class PoderesCambiando extends Thread{
+//        
+//        private String[] paths = new String[4];
+//        public PoderesCambiando(Personaje p){ 
+//            Move[] m = p.getMoves();
+//            for(int i = 0; i<4; i++){
+//                try{
+//                    this.paths[i] = m[i].getImagen();
+//                }
+//                //zzzz
+//                catch(Exception e){
+//                    this.paths[i] = "";
+//                }
+//            }
+//        }
+//
+//        public void run(){
+//            // Imaginando que existe imv_r1 y imv_r2
+//        while (true){
+//            try{
+//                Platform.runLater(() -> {
+//                    imagen1.setImage(new Image(this.paths[0]));
+//                    imagen2.setImage(new Image(this.paths[1]));
+//                });
+//                
+//                Thread.sleep(5000);
+//                Platform.runLater(() -> {
+//                    imagen1.setImage(new Image(this.paths[2]));
+//                    imagen2.setImage(new Image(this.paths[3]));
+//                });
+//                
+//                Thread.sleep(5000);
+//            }
+//            catch(InterruptedException e){
+//                
+//            }
+//            }
+//        }
+//    }
     public class Reloj extends Thread {
         
         public Reloj() {
@@ -302,25 +310,34 @@ public class SecondaryController implements Initializable{
         
         public void run(){
  
-            for (int i=30; i>=0;i--){
-            final int j = i;
-            try{
-                if(i<10){
-                    Platform.runLater(()->{
-                        label_reloj.setText("0"+j);
-                    });
+            for (int i=30; i>0;i--){
+                final int j = i;
+                try{
+                    if(i<10){
+                        Platform.runLater(()->{
+                            label_reloj.setText("0"+j);
+                            label_reloj.setTextFill(Color.RED);
+                        });
+                    }
+                    else{
+                        Platform.runLater(()->{
+                            label_reloj.setText(""+j);
+                        });
+                    }
+                    Thread.sleep(1000);
                 }
-                else{
-                    Platform.runLater(()->{
-                        label_reloj.setText(""+j);
-                    });
-                }
-                Thread.sleep(1000);
-            }
-            catch(InterruptedException ie){
-               
-            }  
-            }  
+                catch(InterruptedException ie){
+
+                }  
+            
+            } 
+            Platform.runLater(()->{
+                label_reloj.setText("00");
+                label_reloj.setTextFill(Color.RED);
+                msg.setText("Perdiste");
+                msg.setTextFill(Color.RED);
+            });
+            
         }
     }
 
@@ -350,13 +367,21 @@ public class SecondaryController implements Initializable{
         btnRespuesta.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t)->{
            if (btnRespuesta.getText().equals(respuestaCorrecta)){
                btnRespuesta.setStyle("-fx-background-color:#CBCB5C;");
+               btnRespuesta.getStyleClass().add("rounded");
                msg.setText("Ganaste");
+               msg.setTextFill(Color.GREEN);
            }
            else{
                btnRespuesta.setStyle("-fx-background-color:#F41E1E;");
+               btnRespuesta.getStyleClass().add("rounded");
                msg.setText("Perdiste");
+               msg.setTextFill(Color.RED);
 
            }
         });
     }
+    
+    
+    
+    
 }

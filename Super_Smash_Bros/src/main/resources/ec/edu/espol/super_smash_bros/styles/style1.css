@@ -2,3 +2,7 @@
 .margin_botton{
     margin-bottom: 30px;
 }
+.rounded{
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+}

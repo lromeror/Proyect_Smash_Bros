@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -85,7 +86,7 @@ public class Personaje implements Serializable{
     
     public static ArrayList<Personaje> readPersonajes(String nomfile){
         ArrayList<Personaje> personajes = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader(nomfile))){
+        try(BufferedReader br = new BufferedReader(new FileReader(nomfile,StandardCharsets.UTF_8))){
             br.readLine();
             br.readLine();
             br.readLine();

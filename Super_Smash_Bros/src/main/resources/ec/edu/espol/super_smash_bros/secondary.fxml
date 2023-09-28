@@ -41,16 +41,11 @@
             </ImageView>
          </graphic>
       </Button>
-      <HBox fx:id="cuadroTime" alignment="CENTER" layoutX="153.0" layoutY="110.0" prefHeight="150.0" prefWidth="541.0">
+      <HBox fx:id="cuadroTime" alignment="CENTER" layoutX="394.0" layoutY="110.0" prefHeight="150.0" prefWidth="300.0">
          <children>
-            <ImageView fx:id="imagen1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="imagen2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="label_reloj">
-               <HBox.margin>
-                  <Insets left="40.0" />
-               </HBox.margin>
                <font>
-                  <Font size="56.0" />
+                  <Font name="Bauhaus 93" size="78.0" />
                </font>
             </Label>
          </children>
