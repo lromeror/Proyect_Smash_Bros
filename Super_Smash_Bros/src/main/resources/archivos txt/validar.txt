@@ -4,6 +4,7 @@ samus
 meta_knight
 pit
 bowser_jr
+squirtle
 chrom
 mythra
 snake
@@ -12,17 +13,23 @@ mario
 palutena
 dark_pit
 zero_suit_samus
+ice_climbers
 mr_game_and_watch
 mega_man
+greninja
+young_link
 ness
 shulk
 richter
 rob
 toon_link
+olimar
 wolf
+dark_samus
 dr_mario
 simon
 pyra
+sheik
 jigglypuff
 yoshi
 king_dedede
@@ -34,6 +41,7 @@ zelda
 marth
 kirby
 mewtwo
+piranha_plant
 lucas
 wario
 little_mac
@@ -51,30 +59,22 @@ donkey_kong
 wii_fit_trainer
 peach
 duck_hunt
+robin
 bowser
 daisy
+charizard
 lucario
 link
 ken
 sonic
 luigi
+pac_man
 pikachu
+ivysaur
+inkling
+ganondorf
 diddy_kong
 ike
 Hay video y fotos
-ice_climbers
-pt_charizard
-greninja
-young_link
-olimar
-dark_samus
-sheik
-piranha_plant
-pt_squirtle
-pt_ivysaur
-robin
-pac_man
-inkling
-ganondorf
 Solo hay video
 Solo hay foto

@@ -1,3 +1,4 @@
+charizard.png
 bowser.png
 daisy.png
 robin.png
@@ -6,6 +7,7 @@ donkey_kong.png
 wii_fit_trainer.png
 duck_hunt.png
 inkling.png
+ivysaur.png
 ike.png
 ganondorf.png
 diddy_kong.png
@@ -26,12 +28,10 @@ marth.png
 king_k_rool.png
 lucina.png
 isabelle.png
-pt_ivysaur.png
 ryu.png
 roy.png
 corrin.png
 captain_falcon.png
-pt_squirtle.png
 little_mac.png
 incineroar.png
 ridley.png
@@ -58,6 +58,7 @@ jigglypuff.png
 king_dedede.png
 yoshi.png
 mythra.png
+squirtle.png
 chrom.png
 fox.png
 bowser_jr.png
@@ -66,7 +67,6 @@ meta_knight.png
 samus.png
 mega_man.png
 mr_game_and_watch.png
-pt_charizard.png
 mario.png
 snake.png
 villager.png
