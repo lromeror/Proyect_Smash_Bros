@@ -104,9 +104,9 @@ public class Personaje implements Serializable{
                 for (String s: movimientos){
                     String[] mov = s.split(":");
                     Move move = null;
-                    switch(mov[1]){
+                    switch(mov[1].strip()){
                         case "NORMAL":
-                            move = new Move(mov[0],TipoMovimiento.NORMAL,mov[2]);
+                            move = new Move(mov[0].strip(),TipoMovimiento.NORMAL,mov[2].strip());
                             break;
                         case "LAT":
                             move = new Move(mov[0],TipoMovimiento.LAT,mov[2]);

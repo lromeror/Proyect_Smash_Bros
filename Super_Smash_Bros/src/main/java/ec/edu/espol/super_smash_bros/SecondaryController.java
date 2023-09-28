@@ -258,10 +258,16 @@ public class SecondaryController implements Initializable{
     public class PoderesCambiando extends Thread{
         
         private String[] paths = new String[4];
-        public PoderesCambiando(Personaje p){
+        public PoderesCambiando(Personaje p){ 
             Move[] m = p.getMoves();
             for(int i = 0; i<4; i++){
-                this.paths[i] = m[i].getImagen();
+                try{
+                    this.paths[i] = m[i].getImagen();
+                }
+                //zzzz
+                catch(Exception e){
+                    this.paths[i] = "";
+                }
             }
         }
 
