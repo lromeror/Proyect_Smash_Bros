@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -22,13 +23,15 @@ public class Personaje implements Serializable{
     private Move FO;
     private String imagen;
     private String descripcion;
+    private HashMap<String, String[]> preguntaRespuestas;
 
-    public Personaje(String name, Move[] moves, Move FO, String imagen, String descripcion){
+    public Personaje(String name, Move[] moves, Move FO, String imagen, String descripcion,HashMap<String, String[]> preguntaRespuestas){
         this.name = name;
         this.moves = moves;
         this.FO = FO;
         this.imagen = imagen;
         this.descripcion = descripcion;
+        this.preguntaRespuestas = preguntaRespuestas;
     }
     
     public Personaje(String name, String imagen){
@@ -75,6 +78,10 @@ public class Personaje implements Serializable{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public HashMap<String, String[]> getPreguntaRespuestas(){
+        return this.preguntaRespuestas;
+    }
     
     public static ArrayList<Personaje> readPersonajes(String nomfile){
         ArrayList<Personaje> personajes = new ArrayList<>();
@@ -88,6 +95,7 @@ public class Personaje implements Serializable{
                 String nombre = tokens[1];
                 String image = tokens[4].replace("jpg", "png").strip();
                 String descripcion = tokens[5];
+                
                 String[] FinalMove = tokens[3].split(":");
                 Move FO = new Move(FinalMove[0],TipoMovimiento.FO, FinalMove[1]);
                 String[] movimientos = tokens[2].split(",");
@@ -113,17 +121,30 @@ public class Personaje implements Serializable{
                     moves[ind] = move;
                     ind++;
                 }
-                Personaje personaje = new Personaje(nombre, moves, FO, image, descripcion);
+                
+                // lista de pregunta respuestas
+                String pregunta = tokens[6]; // key
+                String[] respuestas = tokens[7].split(","); //value
+                HashMap <String, String[]> preguntasRespuestas = new HashMap<String, String[]>();
+                preguntasRespuestas.put(pregunta, respuestas);
+
+                //para obtener la key en este caso 
+                // String keyPregunta = preguntaRespuestas.keySet().stream().findFirst().get()
+
+                // para obtener el valor de las respuestas de la pregunta
+                // preguntasRespuestas.get(keyPregunta r espuestas);
+                Personaje personaje = new Personaje(nombre, moves, FO, image, descripcion,preguntasRespuestas);
                 personajes.add(personaje);
             }
+        }
             
-        } catch (Exception ex) {
-            Move[] movimientos = {new Move("Bola de fuego",TipoMovimiento.NORMAL, "/data/mario/normal.jpg"),
-                    new Move("Capa",TipoMovimiento.LAT, "/data/mario/lat.jpg"),
-                    new Move("Supersalto puñetazo",TipoMovimiento.UP, "/data/mario/up.jpg"),
-                    new Move("F.L.U.D.D",TipoMovimiento.DOWN, "/data/mario/down.jpg")};
-            Personaje p = new Personaje("Mario",movimientos,new Move("Mario final",TipoMovimiento.FO, "/data/mario/final.jpg"), "mario.jpg","El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación.");
-            personajes.add(p);
+        catch (Exception ex) {
+            // Move[] movimientos = {new Move("Bola de fuego",TipoMovimiento.NORMAL, "/data/mario/normal.jpg"),
+            //         new Move("Capa",TipoMovimiento.LAT, "/data/mario/lat.jpg"),
+            //         new Move("Supersalto puñetazo",TipoMovimiento.UP, "/data/mario/up.jpg"),
+            //         new Move("F.L.U.D.D",TipoMovimiento.DOWN, "/data/mario/down.jpg")};
+            // Personaje p = new Personaje("Mario",movimientos,new Move("Mario final",TipoMovimiento.FO, "/data/mario/final.jpg"), "mario.jpg","El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación.");
+            // personajes.add(p);
         }
         
         return personajes;

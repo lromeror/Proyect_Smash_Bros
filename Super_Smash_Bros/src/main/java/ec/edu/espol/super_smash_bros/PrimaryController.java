@@ -66,9 +66,8 @@ public class PrimaryController implements Initializable{
 //                    new Move("Supersalto puñetazo",TipoMovimiento.UP, "/data/mario/up.jpg"),
 //                    new Move("F.L.U.D.D",TipoMovimiento.DOWN, "/data/mario/down.jpg")};
 //                    Personaje per = new Personaje("Mario",movimientos,new Move("Mario final",TipoMovimiento.FO, "/data/mario/final.jpg"), "mario.png","El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación.");
-//                    
-                    Image img = new Image("images_png_1/"+per.getImagen());
-                    
+//                  
+                    Image img = new Image("images_png_1/"+per.getImagen());  
                     ImageView imgV = new ImageView(img);
                     Text text = new Text(per.getName());
                     text.setFont(Font.font("Impact",FontWeight.BOLD,40));
@@ -98,32 +97,32 @@ public class PrimaryController implements Initializable{
                     ind++;
                 }
                 catch(Exception e){
-                    Move[] movimientos = {new Move("Bola de fuego",TipoMovimiento.NORMAL, "/data/mario/normal.jpg"),
-                    new Move("Capa",TipoMovimiento.LAT, "/data/mario/lat.jpg"),
-                    new Move("Supersalto puñetazo",TipoMovimiento.UP, "/data/mario/up.jpg"),
-                    new Move("F.L.U.D.D",TipoMovimiento.DOWN, "/data/mario/down.jpg")};
-                    Personaje per = new Personaje("Mario",movimientos,new Move("Mario final",TipoMovimiento.FO, "/data/mario/final.jpg"), "mario.png","El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación.");
+//                    Move[] movimientos = {new Move("Bola de fuego",TipoMovimiento.NORMAL, "/data/mario/normal.jpg"),
+//                    new Move("Capa",TipoMovimiento.LAT, "/data/mario/lat.jpg"),
+//                    new Move("Supersalto puñetazo",TipoMovimiento.UP, "/data/mario/up.jpg"),
+//                    new Move("F.L.U.D.D",TipoMovimiento.DOWN, "/data/mario/down.jpg")};
+//                    Personaje per = new Personaje("Mario",movimientos,new Move("Mario final",TipoMovimiento.FO, "/data/mario/final.jpg"), "mario.png","El plomero favorito de todos es un personaje equilibrado que está listo para enfrenta cualquier situación.");
+////                    
+//                    Image img = new Image("images_png_2/"+per.getImagen());
 //                    
-                    Image img = new Image("images_png_2/"+per.getImagen());
-                    
-                    ImageView imgV = new ImageView(img);
-                    Text text = new Text(per.getName());
-                    imgV.setFitWidth(300);
-                    
-                    Tarjeta boton = new Tarjeta();
-                    boton.getChildren().add(imgV);
-                    boton.getChildren().add(text);
-                    boton.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t) -> {
-                        Personaje p = boton.getPersonaje();
-                        data.setPersonaje(p);
-                        try {
-                            switchToSecondary();
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                    });
-                    row.getChildren().add(boton);
-                    ind++;
+//                    ImageView imgV = new ImageView(img);
+//                    Text text = new Text(per.getName());
+//                    imgV.setFitWidth(300);
+//                    
+//                    Tarjeta boton = new Tarjeta();
+//                    boton.getChildren().add(imgV);
+//                    boton.getChildren().add(text);
+//                    boton.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t) -> {
+//                        Personaje p = boton.getPersonaje();
+//                        data.setPersonaje(p);
+//                        try {
+//                            switchToSecondary();
+//                        } catch (IOException ex) {
+//                            ex.printStackTrace();
+//                        }
+//                    });
+//                    row.getChildren().add(boton);
+//                    ind++;
                 }
             }
             content.getChildren().add(row);

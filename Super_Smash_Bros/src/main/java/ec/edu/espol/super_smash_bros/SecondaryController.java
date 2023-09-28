@@ -3,9 +3,13 @@ package ec.edu.espol.super_smash_bros;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 
 import javafx.scene.layout.Pane;
 
@@ -62,12 +67,27 @@ public class SecondaryController implements Initializable{
     private ImageView imagen2;
     @FXML
     private VBox cuadroPreguntas;
+    @FXML
+    private Label label_reloj;
+    private PoderesCambiando poderes;
+    @FXML
+    private Button opcion1;
+    @FXML
+    private Button opcion3;
+    @FXML
+    private Button opcion2;
+    @FXML
+    private Button opcion4;
+    @FXML
+    private Label labelpregunta;
+    @FXML
+    private Label msg;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         personaje = data.getPersonaje();
-       
+        rellenarPreguntas(personaje);
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
 //        personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
@@ -147,11 +167,14 @@ public class SecondaryController implements Initializable{
 //        datos.getChildren().addAll(movimientos,descrip);
 //        imagenLuchador.setFitHeight(900);
         PersonajeHablando hilo1 = new PersonajeHablando(personaje);
+        poderes = new PoderesCambiando(personaje);
+        Reloj reloj = new Reloj();
+        reloj.start();
         hilo1.start();
+        poderes.start();
         
-        
-        
-        
+        if (label_reloj.getText().equals("00"))
+            msg.setText("Perdiste");
     }
     
     private void adjustSizesAndPositions() {
@@ -189,7 +212,7 @@ public class SecondaryController implements Initializable{
         if (mediaPlayer != null){
             mediaPlayer.stop();
         } 
-
+        poderes.interrupt();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Parent root = loader.load();
 //        Parent root = FXMLLoader.load(getClass().getResource("tablero.fxml"));
@@ -206,7 +229,7 @@ public class SecondaryController implements Initializable{
         private String carpetaFin = "images_png_2/";
 
         public PersonajeHablando(Personaje p){
-            per= p;
+            per = p;
         }
         @Override
         public void run(){
@@ -230,40 +253,104 @@ public class SecondaryController implements Initializable{
         }
     }
     
-    public VBox movimientos(){
-        VBox general = new VBox();
-        HBox general1 = new HBox();
-        HBox fSmash = new HBox();
-        ImageView paso = new ImageView(new Image("taws/regresar.png"));
-        ImageView move = new ImageView(new Image(personaje.getFO().getImagen()));
-        Text texto = new Text(personaje.getFO().getName()+"\n"+personaje.getFO().getTipo());
-        fSmash.getChildren().addAll(paso,move,texto);
-        VBox general2 = new VBox();
-        VBox general3 = new VBox();
+    
+    
+    public class PoderesCambiando extends Thread{
         
-        HBox mov1 = completHboxMove("taws/regresar.png",personaje.getMoves()[0]);
-        
-        
-        HBox mov2 = completHboxMove("taws/regresar.png",personaje.getMoves()[1]);
-        HBox mov3 = completHboxMove("taws/regresar.png",personaje.getMoves()[2]);
-        HBox mov4 = completHboxMove("taws/regresar.png",personaje.getMoves()[3]);
-        general2.getChildren().addAll(mov1,mov3);
-        general3.getChildren().addAll(mov2,mov4);
-        general1.getChildren().addAll(general2, general3);
-        general.getChildren().addAll(general1, fSmash);
-        return general;
+        private String[] paths = new String[4];
+        public PoderesCambiando(Personaje p){
+            Move[] m = p.getMoves();
+            for(int i = 0; i<4; i++){
+                this.paths[i] = m[i].getImagen();
+            }
+        }
+
+        public void run(){
+            // Imaginando que existe imv_r1 y imv_r2
+        while (true){
+            try{
+                Platform.runLater(() -> {
+                    imagen1.setImage(new Image(this.paths[0]));
+                    imagen2.setImage(new Image(this.paths[1]));
+                });
+                
+                Thread.sleep(5000);
+                Platform.runLater(() -> {
+                    imagen1.setImage(new Image(this.paths[2]));
+                    imagen2.setImage(new Image(this.paths[3]));
+                });
+                
+                Thread.sleep(5000);
+            }
+            catch(InterruptedException e){
+                
+            }
+            }
+        }
     }
-    
-    
-    public HBox completHboxMove(String rutaPaso,Move movimiento){
-        HBox h = new HBox();
-        ImageView paso = new ImageView(new Image(rutaPaso));
-        VBox movi = new VBox();
-        ImageView imgMove = new ImageView(new Image(movimiento.getImagen()));
-        Text nombre = new Text(movimiento.getName()+"\n"+movimiento.getTipo());
-        movi.getChildren().addAll(imgMove, nombre);
-        h.getChildren().addAll(paso, movi);
-        return h;
+    public class Reloj extends Thread {
         
+        public Reloj() {
+            
+        }
+        
+        public void run(){
+ 
+            for (int i=30; i>=0;i--){
+            final int j = i;
+            try{
+                if(i<10){
+                    Platform.runLater(()->{
+                        label_reloj.setText("0"+j);
+                    });
+                }
+                else{
+                    Platform.runLater(()->{
+                        label_reloj.setText(""+j);
+                    });
+                }
+                Thread.sleep(1000);
+            }
+            catch(InterruptedException ie){
+               
+            }  
+            }  
+        }
+    }
+
+    public void shuffle(String[] respuestas){
+        List<String> pList = Arrays.asList(respuestas);
+        Collections.shuffle(pList);
+        pList.toArray(respuestas);
+    }
+
+    public void rellenarPreguntas(Personaje p){
+        String pregunta = p.getPreguntaRespuestas().keySet().stream().findFirst().get();
+        String[] respuestas = p.getPreguntaRespuestas().get(pregunta);
+        labelpregunta.setText(pregunta);
+        String respuestaCorrecta = respuestas[0];
+        shuffle(respuestas);
+        opcion1.setText(respuestas[0]);
+        opcion2.setText(respuestas[1]);
+        opcion3.setText(respuestas[2]);
+        opcion4.setText(respuestas[3]);
+        accion(opcion1,respuestaCorrecta);
+        accion(opcion2,respuestaCorrecta);
+        accion(opcion3,respuestaCorrecta);
+        accion(opcion4,respuestaCorrecta);
+    }
+
+    public void accion(Button btnRespuesta, String respuestaCorrecta){
+        btnRespuesta.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t)->{
+           if (btnRespuesta.getText().equals(respuestaCorrecta)){
+               btnRespuesta.setStyle("-fx-background-color:#CBCB5C;");
+               msg.setText("Ganaste");
+           }
+           else{
+               btnRespuesta.setStyle("-fx-background-color:#F41E1E;");
+               msg.setText("Perdiste");
+
+           }
+        });
     }
 }

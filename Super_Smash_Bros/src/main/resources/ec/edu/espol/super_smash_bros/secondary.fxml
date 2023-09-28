@@ -45,7 +45,7 @@
          <children>
             <ImageView fx:id="imagen1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="imagen2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Label text="20">
+            <Label fx:id="label_reloj">
                <HBox.margin>
                   <Insets left="40.0" />
                </HBox.margin>
@@ -57,7 +57,7 @@
       </HBox>
       <VBox fx:id="cuadroPreguntas" alignment="CENTER" layoutX="253.0" layoutY="199.0" prefHeight="326.0" prefWidth="642.0">
          <children>
-            <Label alignment="CENTER" text="Label" textAlignment="CENTER">
+            <Label fx:id="labelpregunta" alignment="CENTER" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -75,28 +75,33 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE">
+                  <Button fx:id="opcion1" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.rowIndex="1">
+                  <Button fx:id="opcion3" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1">
+                  <Button fx:id="opcion2" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="opcion4" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
                </children>
             </GridPane>
+            <Label fx:id="msg">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
          </children>
       </VBox>
    </children>
