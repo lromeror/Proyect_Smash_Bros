@@ -66,7 +66,7 @@ public class SecondaryController implements Initializable{
     @FXML
     private VBox cuadroPreguntas;
     @FXML
-    private Label label_reloj;
+    private Text label_reloj;
 //    private PoderesCambiando poderes;
     @FXML
     private Button opcion1;
@@ -77,9 +77,10 @@ public class SecondaryController implements Initializable{
     @FXML
     private Button opcion4;
     @FXML
-    private Label labelpregunta;
+    private Text labelpregunta;
     @FXML
     private Label msg;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -88,15 +89,15 @@ public class SecondaryController implements Initializable{
         rellenarPreguntas(personaje);
         AnchorPane.setBottomAnchor(cuadroPreguntas, 30.0);
         AnchorPane.setRightAnchor(cuadroPreguntas, 120.0);
-        AnchorPane.setTopAnchor(cuadroTime, 200.0);
+        AnchorPane.setTopAnchor(cuadroTime, 240.0);
         AnchorPane.setRightAnchor(cuadroTime, 500.0);
         opcion1.getStyleClass().add("rounded");
         opcion2.getStyleClass().add("rounded");
         opcion3.getStyleClass().add("rounded");
         opcion4.getStyleClass().add("rounded");
-        labelpregunta.setWrapText(true);
-        labelpregunta.setMaxWidth(600);
-//        labelpregunta.setWrappingWidth(440);
+        labelpregunta.setWrappingWidth(550);
+        
+//      labelpregunta.setWrappingWidth(440);
         Font customFont = Font.loadFont(getClass().getResource("/fonts/Big_Apple_3PM.ttf").toExternalForm(), 90);
 //        personaje = new Personaje("Bayonetta","bayonetta.png");
         nombre.setText(personaje.getName());
@@ -180,6 +181,8 @@ public class SecondaryController implements Initializable{
         Reloj reloj = new Reloj();
         reloj.start();
         hilo1.start();
+        
+        
 //        poderes.start();
         
         
@@ -305,7 +308,7 @@ public class SecondaryController implements Initializable{
     public class Reloj extends Thread {
         
         public Reloj() {
-            
+           
         }
         
         public void run(){
@@ -316,7 +319,7 @@ public class SecondaryController implements Initializable{
                     if(i<10){
                         Platform.runLater(()->{
                             label_reloj.setText("0"+j);
-                            label_reloj.setTextFill(Color.RED);
+                            label_reloj.setFill(Color.RED);
                         });
                     }
                     else{
@@ -333,7 +336,7 @@ public class SecondaryController implements Initializable{
             } 
             Platform.runLater(()->{
                 label_reloj.setText("00");
-                label_reloj.setTextFill(Color.RED);
+                label_reloj.setFill(Color.RED);
                 msg.setText("Perdiste");
                 msg.setTextFill(Color.RED);
             });
@@ -364,6 +367,7 @@ public class SecondaryController implements Initializable{
     }
 
     public void accion(Button btnRespuesta, String respuestaCorrecta){
+        
         btnRespuesta.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event t)->{
            if (btnRespuesta.getText().equals(respuestaCorrecta)){
                btnRespuesta.setStyle("-fx-background-color:#CBCB5C;");

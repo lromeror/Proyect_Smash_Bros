@@ -43,23 +43,23 @@
       </Button>
       <HBox fx:id="cuadroTime" alignment="CENTER" layoutX="394.0" layoutY="110.0" prefHeight="150.0" prefWidth="300.0">
          <children>
-            <Label fx:id="label_reloj">
+            <Text fx:id="label_reloj" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="Bauhaus 93" size="78.0" />
                </font>
-            </Label>
+            </Text>
          </children>
       </HBox>
       <VBox fx:id="cuadroPreguntas" alignment="CENTER" layoutX="253.0" layoutY="199.0" prefHeight="326.0" prefWidth="642.0">
          <children>
-            <Label fx:id="labelpregunta" alignment="CENTER" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
+            <Text fx:id="labelpregunta" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <VBox.margin>
                   <Insets bottom="30.0" />
                </VBox.margin>
-            </Label>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
             <GridPane alignment="CENTER" prefHeight="259.0" prefWidth="642.0">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -70,22 +70,22 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="opcion1" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE">
+                  <Button fx:id="opcion1" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="opcion3" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.rowIndex="1">
+                  <Button fx:id="opcion3" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="opcion2" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1">
+                  <Button fx:id="opcion2" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="opcion4" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="opcion4" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" style="-fx-background-color: #0064b3; -fx-border-radius: 90;" text="Button" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
