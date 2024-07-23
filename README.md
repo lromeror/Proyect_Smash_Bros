@@ -1,38 +1,40 @@
 # 🎮 Proyect_Smash_Bros
 
-## 📋 Descripción del Proyecto
-Este proyecto es un juego interactivo desarrollado para la Feria de Novatos, utilizando una base de datos con información detallada de los personajes de Smash Bros. El juego muestra las cartillas de los personajes y presenta un trivia donde los participantes responden preguntas sobre cada personaje para ganar puntos.
+# Freshmen Fair Project: Interactive Smash Bros Game
 
-## ✨ Características Principales
-- **📚 Base de Datos de Personajes:** Incluye información detallada sobre los personajes de Smash Bros, accesible a los jugadores durante el juego.
-- **❓ Juego de Trivia:** Los participantes responden preguntas sobre los personajes para acumular puntos.
-- **📜 Cartillas Informativas:** Visualización de cartillas con datos importantes de cada personaje, facilitando el aprendizaje y la participación.
-- **🎮 Gamificación:** Integración de elementos de juego para incentivar la competencia y el compromiso de los usuarios.
+## Project Description
+This project is an interactive game developed for the Freshmen Fair, using a database with detailed information about Smash Bros characters. The game displays character cards and features a trivia game where participants answer questions about each character to earn points.
 
-## 🎯 Objetivos
-- Proporcionar una herramienta educativa y entretenida para los novatos.
-- Fomentar el conocimiento sobre los personajes de Smash Bros de manera interactiva.
-- Promover la participación activa y el entusiasmo entre los nuevos estudiantes.
+## Key Features
+- **Character Database:** Includes detailed information about Smash Bros characters, accessible to players during the game.
+- **Trivia Game:** Participants answer questions about the characters to accumulate points.
+- **Informative Cards:** Displays cards with important data about each character, facilitating learning and participation.
+- **Gamification:** Integration of game elements to incentivize competition and user engagement.
 
-## 🛠️ Tecnologías Utilizadas
-- **💾 Base de Datos:** Para almacenar y gestionar la información de los personajes.
-- **💻 Frontend:** Interfaz de usuario desarrollada para mostrar las cartillas y manejar la interacción con los jugadores.
-- **🔧 Backend:** Lógica del juego de trivia y manejo de puntuaciones.
+## Objectives
+- Provide an educational and entertaining tool for freshmen.
+- Promote knowledge about Smash Bros characters interactively.
+- Encourage active participation and enthusiasm among new students.
 
-## 🎲 Cómo Jugar
-1. **🕹️ Inicio:** Los jugadores ingresan al juego y seleccionan un personaje de la base de datos.
-2. **❓ Trivia:** Responden una serie de preguntas relacionadas con el personaje seleccionado.
-3. **🏆 Puntuación:** Los puntos se otorgan en función de las respuestas correctas y se muestran en una tabla de líderes.
+## Technologies Used
+- **Database:** To store and manage character information.
+- **Frontend:** User interface developed to display the cards and handle player interaction.
+- **Backend:** Trivia game logic and score management.
 
-## 📈 Resultados Esperados
-- Mayor conocimiento y familiaridad con los personajes de Smash Bros entre los participantes.
-- Aumento del interés y la participación en la feria de novatos.
-- Creación de un ambiente divertido y educativo para los nuevos estudiantes.
+## How to Play
+1. **Start:** Players enter the game and select a character from the database.
+2. **Trivia:** They answer a series of questions related to the selected character.
+3. **Scoring:** Points are awarded based on correct answers and displayed on a leaderboard.
 
-## 🤝 Contribuciones del Equipo
-- **🗃️ Desarrollo de la Base de Datos:** Recolección y organización de la información de los personajes.
-- **🎨 Diseño de la Interfaz:** Creación de una experiencia de usuario intuitiva y atractiva.
-- **🛠️ Implementación del Juego de Trivia:** Desarrollo de la lógica y las reglas del juego.
+## Expected Outcomes
+- Greater knowledge and familiarity with Smash Bros characters among participants.
+- Increased interest and participation in the freshmen fair.
+- Creation of a fun and educational environment for new students.
 
-## 📚 Conclusión
-Este proyecto no solo proporciona una plataforma divertida y competitiva, sino que también sirve como una herramienta educativa, ayudando a los nuevos estudiantes a integrarse y aprender de manera lúdica y efectiva.
+## Team Contributions
+- **Database Development:** Collection and organization of character information.
+- **Interface Design:** Creation of an intuitive and attractive user experience.
+- **Trivia Game Implementation:** Development of game logic and rules.
+
+## Conclusion
+This project not only provides a fun and competitive platform but also serves as an educational tool, helping new students integrate and learn in a playful and effective way.
